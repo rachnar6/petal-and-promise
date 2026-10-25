@@ -48,6 +48,21 @@ const publicLimiter = rateLimit({
 });
 app.use('/api/', publicLimiter);
 
+// Root welcome endpoint
+app.get('/', (req, res) => {
+  res.json({
+    status: 'online',
+    service: 'Petal & Promise Floral Celebration API Engine',
+    health: '/api/health',
+    endpoints: {
+      packages: '/api/catalog/packages',
+      themes: '/api/catalog/themes',
+      testimonials: '/api/catalog/testimonials',
+      bookings: '/api/bookings'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
