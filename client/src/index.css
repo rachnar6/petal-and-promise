@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Luxury Romantic Utility Classes */
+.font-script {
+  font-family: 'Great Vibes', cursive;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.glass-card {
+  background: rgba(248, 241, 236, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(221, 166, 178, 0.28);
+}
+
+.glass-card-dark {
+  background: rgba(117, 77, 88, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(232, 217, 197, 0.25);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #A88941 0%, #D4AF37 50%, #CBB26B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-blush-gradient {
+  background: linear-gradient(135deg, #754D58 0%, #B66A7A 50%, #DDA6B2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-radial-glow {
+  background: radial-gradient(circle at center, rgba(221, 166, 178, 0.18) 0%, rgba(248, 241, 236, 0) 70%);
+}
+
+.bg-heavenly-gradient {
+  background: linear-gradient(180deg, #F8F1EC 0%, #FAF0F2 35%, #F4ECE1 70%, #F8F1EC 100%);
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F1EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDA6B2;
+  border-radius: 9999px;
+  border: 2px solid #F8F1EC;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B66A7A;
+}
