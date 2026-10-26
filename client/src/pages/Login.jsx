@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { Flower2, Sparkles, Shield, Mail, Lock, ArrowRight, User } from 'lucide-react';
 
 export default function Login() {
-  const { loginWithGoogle, loginWithDemo, loginWithEmail, signupWithEmail, isConfigured } = useAuth();
+  const { loginWithGoogle, loginWithEmail, signupWithEmail, isConfigured } = useAuth();
   const [isRegistering, setIsRegistering] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -26,15 +26,6 @@ export default function Login() {
       setError(err.message || 'Google sign-in failed');
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleDemoLogin = (role) => {
-    loginWithDemo(role);
-    if (role === 'admin') {
-      navigate('/admin');
-    } else {
-      navigate('/portal');
     }
   };
 
@@ -84,33 +75,6 @@ export default function Login() {
           </div>
         )}
 
-        {/* 1-Click Instant Demo Testing Options */}
-        <div className="mb-6 p-3.5 rounded-2xl bg-sand-100/80 border border-sand-300">
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-berry-500 mb-2 flex items-center justify-between">
-            <span>Instant Demo Logins</span>
-            <span className="text-[10px] text-sage-700 font-bold">1-Click Test</span>
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            <button
-              type="button"
-              onClick={() => handleDemoLogin('customer')}
-              className="py-2 px-3 rounded-xl bg-white text-xs font-semibold text-berry-700 border border-blush/40 hover:bg-blush-50 shadow-soft flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-blush-500" />
-              <span>Bride Portal</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleDemoLogin('admin')}
-              className="py-2 px-3 rounded-xl bg-berry-600 text-xs font-semibold text-ivory hover:bg-berry-700 shadow-soft flex items-center justify-center gap-1.5 transition-colors"
-            >
-              <Shield className="w-3.5 h-3.5 text-blush" />
-              <span>Admin Director</span>
-            </button>
-          </div>
-        </div>
-
         {/* Google Authentication Button */}
         <button
           type="button"
@@ -156,7 +120,7 @@ export default function Login() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="e.g. Genevieve Thorne"
+                  placeholder="Enter your full name"
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush transition-colors"
                 />
                 <User className="w-4 h-4 text-berry-400 absolute left-3.5 top-3" />
@@ -172,7 +136,7 @@ export default function Login() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="bride@example.com"
+                placeholder="Enter your email address"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush transition-colors"
               />
               <Mail className="w-4 h-4 text-berry-400 absolute left-3.5 top-3" />
@@ -187,7 +151,7 @@ export default function Login() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush transition-colors"
               />
               <Lock className="w-4 h-4 text-berry-400 absolute left-3.5 top-3" />

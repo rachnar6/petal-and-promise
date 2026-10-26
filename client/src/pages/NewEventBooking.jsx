@@ -57,7 +57,7 @@ const flowerOptions = [
 ];
 
 export default function NewEventBooking() {
-  const { user, loginWithDemo } = useAuth();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -70,41 +70,41 @@ export default function NewEventBooking() {
   const [submittedBooking, setSubmittedBooking] = useState(null);
 
   const [formData, setFormData] = useState({
-    // Client Info
-    clientName: user?.name || 'Genevieve Thorne',
-    clientEmail: user?.email || 'bride@petalandpromise.com',
-    clientPhone: '+1 (555) 789-2345',
+    // Client Info (Empty by default; populated only if real user is signed in)
+    clientName: user?.name || '',
+    clientEmail: user?.email || '',
+    clientPhone: '',
     // Event Details
     eventType: preset.presetEventType || 'Wedding',
-    eventDate: '2026-11-20',
-    eventTime: '16:30',
-    venueName: 'The Conservatory Manor',
-    venueCity: 'San Francisco, CA',
+    eventDate: '',
+    eventTime: '',
+    venueName: '',
+    venueCity: '',
     isOutdoor: false,
-    guestCount: preset.presetGuests || 120,
+    guestCount: preset.presetGuests || 100,
     // Theme & Package
     themeName: preset.presetTheme || availableThemes[0].name,
     themePalette: preset.presetPalette || availableThemes[0].palette,
-    packageName: preset.presetPackageName || 'The Versailles Grand Romance',
-    packageId: preset.presetPackageId || 'pkg_wedding_versailles',
+    packageName: preset.presetPackageName || '',
+    packageId: preset.presetPackageId || '',
     // Budget
-    budgetTotal: preset.presetBudget || 6500,
-    budgetTier: preset.presetTier || 'Grand Luxe',
+    budgetTotal: preset.presetBudget || 5000,
+    budgetTier: preset.presetTier || 'Elegance',
     // Flowers
-    primaryFlowers: ['English Garden Roses', 'Sarah Bernhardt Peonies', 'Silver Dollar Eucalyptus'],
+    primaryFlowers: [],
     scentLevel: 'Moderate',
-    colorDominance: 'Blush pink, ivory, and sage foliage',
+    colorDominance: '',
     // Arrangements
-    ceremonyArch: true,
-    aisleFlowers: true,
-    bridalBouquet: true,
-    bridesmaidsBouquets: 4,
-    centerpiecesCount: 12,
+    ceremonyArch: false,
+    aisleFlowers: false,
+    bridalBouquet: false,
+    bridesmaidsBouquets: 0,
+    centerpiecesCount: 0,
     hangingFlorals: false,
-    cakeFlowers: true,
+    cakeFlowers: false,
     // Inspiration & Notes
-    inspirationUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    specialNotes: 'We adore trailing silk ribbons and abundant candlelight along the ceremony aisle.'
+    inspirationUrl: '',
+    specialNotes: ''
   });
 
   const toggleFlower = (flower) => {
@@ -224,15 +224,6 @@ export default function NewEventBooking() {
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Atelier</span>
           </Link>
-
-          {!user && (
-            <button
-              onClick={() => loginWithDemo('customer')}
-              className="text-xs text-blush-600 underline font-medium hover:text-berry-700 transition-colors"
-            >
-              Sign in with Demo Bride for instant saving
-            </button>
-          )}
         </div>
 
         {!submittedBooking ? (
@@ -305,6 +296,7 @@ export default function NewEventBooking() {
                         required
                         value={formData.clientName}
                         onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
+                        placeholder="Enter your full name"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
                       />
                     </div>
@@ -316,6 +308,7 @@ export default function NewEventBooking() {
                         required
                         value={formData.clientEmail}
                         onChange={(e) => setFormData({ ...formData, clientEmail: e.target.value })}
+                        placeholder="Enter your email address"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
                       />
                     </div>
@@ -327,6 +320,7 @@ export default function NewEventBooking() {
                         required
                         value={formData.clientPhone}
                         onChange={(e) => setFormData({ ...formData, clientPhone: e.target.value })}
+                        placeholder="Enter your phone number"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
                       />
                     </div>
@@ -377,7 +371,7 @@ export default function NewEventBooking() {
                         type="text"
                         value={formData.venueName}
                         onChange={(e) => setFormData({ ...formData, venueName: e.target.value })}
-                        placeholder="e.g. St. Regis Rose Conservatory"
+                        placeholder="Venue name (e.g. City Hall, Conservatory Manor)"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
                       />
                     </div>
@@ -390,6 +384,7 @@ export default function NewEventBooking() {
                         max="1000"
                         value={formData.guestCount}
                         onChange={(e) => setFormData({ ...formData, guestCount: e.target.value })}
+                        placeholder="e.g. 100"
                         className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
                       />
                     </div>

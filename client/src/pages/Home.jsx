@@ -34,8 +34,8 @@ export default function Home({ onOpenConsultation }) {
               </div>
 
               {/* Grand Luxury Editorial Title */}
-              <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-bold text-berry-700 tracking-tight leading-[1.08] animate-slide-up">
-                Where Dreams <span className="font-script text-5xl sm:text-7xl xl:text-8xl text-blush-500 font-normal block sm:inline">Blossom</span> into Eternal Promises
+              <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-berry-700 tracking-tight leading-[1.25] sm:leading-[1.2] animate-slide-up">
+                Where Dreams <span className="font-script text-5xl sm:text-6xl lg:text-7xl xl:text-8xl text-blush-500 font-normal inline-block px-1 sm:px-2 align-baseline">Blossom</span> into Eternal Promises
               </h1>
 
               {/* Poetic Subheading */}
@@ -120,7 +120,7 @@ export default function Home({ onOpenConsultation }) {
                 </div>
 
                 {/* Floating Top-Left Badge */}
-                <div className="absolute -top-6 -left-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-blush/30 shadow-romantic hidden sm:flex items-center gap-3 animate-float-slow">
+                <div className="absolute -top-4 -left-2 sm:-top-5 sm:-left-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-blush/30 shadow-romantic hidden md:flex items-center gap-3 animate-float-slow z-20">
                   <div className="w-10 h-10 rounded-full bg-blush-50 flex items-center justify-center text-blush-500">
                     <Flower2 className="w-5 h-5" />
                   </div>
@@ -131,7 +131,7 @@ export default function Home({ onOpenConsultation }) {
                 </div>
 
                 {/* Floating Bottom-Right Badge */}
-                <div className="absolute -bottom-6 -right-6 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-sand-300 shadow-romantic hidden sm:flex items-center gap-3 animate-float-medium">
+                <div className="absolute -bottom-4 -right-2 sm:-bottom-5 sm:-right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-sand-300 shadow-romantic hidden md:flex items-center gap-3 animate-float-medium z-20">
                   <div className="w-10 h-10 rounded-full bg-sage-50 flex items-center justify-center text-sage-600">
                     <Sparkles className="w-5 h-5" />
                   </div>

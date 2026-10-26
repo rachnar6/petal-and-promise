@@ -145,7 +145,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     required
                     value={formData.clientName}
                     onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
-                    placeholder="e.g. Genevieve Rostova"
+                    placeholder="Enter your full name"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
@@ -157,7 +157,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     required
                     value={formData.clientEmail}
                     onChange={(e) => setFormData({ ...formData, clientEmail: e.target.value })}
-                    placeholder="e.g. genevieve@example.com"
+                    placeholder="Enter your email address"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
@@ -171,7 +171,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     required
                     value={formData.clientPhone}
                     onChange={(e) => setFormData({ ...formData, clientPhone: e.target.value })}
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="Enter your phone number"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>

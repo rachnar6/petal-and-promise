@@ -12,8 +12,20 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('pp_user');
-    return saved ? JSON.parse(saved) : null;
+    try {
+      const saved = localStorage.getItem('pp_user');
+      if (!saved) return null;
+      const parsed = JSON.parse(saved);
+      // Clean up legacy mock demo identities so users start with clean real state
+      if (parsed.uid === 'client_demo_1' || parsed.uid === 'admin_director_01' || parsed.name === 'Elena Rostova') {
+        localStorage.removeItem('pp_user');
+        localStorage.removeItem('pp_token');
+        return null;
+      }
+      return parsed;
+    } catch {
+      return null;
+    }
   });
   const [token, setToken] = useState(() => localStorage.getItem('pp_token') || '');
   const [loading, setLoading] = useState(true);
@@ -126,7 +138,18 @@ export function AuthProvider({ children }) {
       return { success: true, user: userData };
     } else {
       const isAdm = email.includes('admin');
-      return loginWithDemo(isAdm ? 'admin' : 'customer', { email, name: email.split('@')[0] });
+      const userData = {
+        uid: 'user_' + Date.now(),
+        email: email,
+        name: email.split('@')[0],
+        role: isAdm ? 'admin' : 'customer'
+      };
+      const token = 'token_' + Date.now();
+      setUser(userData);
+      setToken(token);
+      localStorage.setItem('pp_user', JSON.stringify(userData));
+      localStorage.setItem('pp_token', token);
+      return { success: true, user: userData };
     }
   };
 
@@ -147,7 +170,18 @@ export function AuthProvider({ children }) {
       localStorage.setItem('pp_token', idToken);
       return { success: true, user: userData };
     } else {
-      return loginWithDemo('customer', { email, name: name || email.split('@')[0] });
+      const userData = {
+        uid: 'user_' + Date.now(),
+        email: email,
+        name: name || email.split('@')[0],
+        role: 'customer'
+      };
+      const token = 'token_' + Date.now();
+      setUser(userData);
+      setToken(token);
+      localStorage.setItem('pp_user', JSON.stringify(userData));
+      localStorage.setItem('pp_token', token);
+      return { success: true, user: userData };
     }
   };
 

@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 
 export default function CustomerPortal({ onOpenConsultation }) {
-  const { user, loginWithDemo } = useAuth();
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const [bookings, setBookings] = useState([]);
@@ -31,9 +31,8 @@ export default function CustomerPortal({ onOpenConsultation }) {
   const [activeTab, setActiveTab] = useState('bookings'); // 'bookings' | 'consultations' | 'favorites'
 
   useEffect(() => {
-    // If not logged in, auto-login with demo customer so the user can test immediately!
     if (!user) {
-      loginWithDemo('customer');
+      navigate('/login', { state: { from: { pathname: '/portal' } } });
       return;
     }
     fetchData();

@@ -134,7 +134,7 @@ export default function ContactSection() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="e.g. Genevieve Thorne"
+                      placeholder="Enter your full name"
                       className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
@@ -146,7 +146,7 @@ export default function ContactSection() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="e.g. genevieve@example.com"
+                      placeholder="Enter your email address"
                       className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
@@ -159,7 +159,7 @@ export default function ContactSection() {
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+1 (555) 000-0000"
+                      placeholder="Enter your phone number"
                       className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>

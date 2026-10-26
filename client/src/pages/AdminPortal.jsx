@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
 import {
@@ -25,7 +26,8 @@ import {
 } from 'lucide-react';
 
 export default function AdminPortal() {
-  const { user, isAdmin, loginWithDemo } = useAuth();
+  const { user, isAdmin } = useAuth();
+  const navigate = useNavigate();
 
   const [activeSection, setActiveSection] = useState('overview'); // 'overview' | 'bookings' | 'enquiries' | 'consultations' | 'packages' | 'outbox'
   const [overview, setOverview] = useState(null);
@@ -64,9 +66,8 @@ export default function AdminPortal() {
   });
 
   useEffect(() => {
-    // If not logged in as admin, provide quick login option or auto-login with demo admin for instant evaluation!
     if (!user || user.role !== 'admin') {
-      loginWithDemo('admin');
+      navigate('/login', { state: { from: { pathname: '/admin' } } });
       return;
     }
     loadAllAdminData();

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import FloatingPetals from './components/FloatingPetals';
 import ConsultationModal from './components/ConsultationModal';
 
 // Pages
@@ -20,9 +19,6 @@ export default function App() {
 
   return (
     <div className="flex flex-col min-h-screen relative font-sans">
-      {/* Heavenly Floating Rose & Blossom Petals */}
-      <FloatingPetals />
-
       {/* Main Luxury Navigation Bar */}
       <Navbar onOpenConsultation={() => setIsConsultationOpen(true)} />
 
