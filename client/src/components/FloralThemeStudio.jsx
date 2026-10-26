@@ -118,15 +118,15 @@ export default function FloralThemeStudio() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-blush/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-sage/10 rounded-full blur-2xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush/20 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100/40 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
             <Palette className="w-3.5 h-3.5 text-blush-500" />
             <span>Interactive Floral Atelier</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Floral Theme Studio
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -147,8 +147,8 @@ export default function FloralThemeStudio() {
                 }}
                 className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 flex items-center gap-2 shadow-soft ${
                   isActive
-                    ? 'bg-berry-600 text-ivory shadow-luxe scale-105'
-                    : 'bg-white/80 text-berry-600 hover:bg-blush-50 border border-blush/20'
+                    ? 'bg-berry-500 text-ivory shadow-luxe scale-105'
+                    : 'bg-ivory-50/85 text-berry-600 hover:bg-blush-50 border border-blush-200/35'
                 }`}
               >
                 <Sparkles className={`w-3.5 h-3.5 ${isActive ? 'text-blush' : 'text-berry-400'}`} />
@@ -159,7 +159,7 @@ export default function FloralThemeStudio() {
         </div>
 
         {/* Main Interactive Studio Stage */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-ivory/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blush/30 shadow-luxe">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-ivory/80 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blush-300/40 shadow-luxe">
           
           {/* Left: Visual Atmosphere & Photo Preview */}
           <div className="lg:col-span-6 space-y-6">
@@ -183,13 +183,13 @@ export default function FloralThemeStudio() {
                 </p>
               </div>
 
-              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-ivory/90 backdrop-blur-md text-[11px] font-semibold text-berry-600 shadow-soft">
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-ivory-100/90 backdrop-blur-md text-[11px] font-semibold text-berry-600 shadow-soft">
                 🌿 {selectedTheme.bestFor.split(',')[0]}
               </div>
             </div>
 
             {/* Interactive Color Swatch Bar */}
-            <div className="bg-white/80 rounded-2xl p-4 border border-sand-300 shadow-soft">
+            <div className="bg-ivory-50/85 rounded-2xl p-4 border border-sand-300/70 shadow-soft">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-berry-600 flex items-center gap-1.5">
                   <Palette className="w-3.5 h-3.5 text-blush-500" />
@@ -214,7 +214,7 @@ export default function FloralThemeStudio() {
                       className="w-9 h-9 rounded-full shadow-inner border border-black/10 group-hover:scale-110 transition-transform mb-1.5"
                       style={{ backgroundColor: swatch.hex }}
                     />
-                    <span className="text-[10px] font-medium text-berry-700 truncate w-full">{swatch.name}</span>
+                    <span className="text-[10px] font-medium text-berry-600 truncate w-full">{swatch.name}</span>
                     <span className="text-[9px] text-berry-400 font-mono">{swatch.hex}</span>
                   </button>
                 ))}
@@ -228,7 +228,7 @@ export default function FloralThemeStudio() {
               <span className="text-xs font-semibold uppercase tracking-widest text-blush-600">
                 Botanical Alchemy
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-700 mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-600 mt-1">
                 Signature Harvest & Fragrance
               </h3>
               <p className="text-xs sm:text-sm text-berry-500 mt-2">
@@ -247,7 +247,7 @@ export default function FloralThemeStudio() {
                     className={`flex items-center gap-3 p-3 rounded-2xl border text-left transition-all ${
                       isCurrent
                         ? 'border-blush-500 bg-blush-50/90 shadow-soft scale-[1.02]'
-                        : 'border-sand-300 bg-white/70 hover:bg-sand-50'
+                        : 'border-sand-300/70 bg-white/70 hover:bg-sand-50'
                     }`}
                   >
                     <img
@@ -256,7 +256,7 @@ export default function FloralThemeStudio() {
                       className="w-12 h-12 rounded-xl object-cover shadow-inner flex-shrink-0"
                     />
                     <div className="min-w-0">
-                      <p className="text-xs font-serif font-semibold text-berry-700 truncate">{fl.name}</p>
+                      <p className="text-xs font-serif font-semibold text-berry-600 truncate">{fl.name}</p>
                       <p className="text-[10px] text-sage-600 flex items-center gap-1 mt-0.5">
                         <Wind className="w-2.5 h-2.5" />
                         <span className="truncate">{fl.scent}</span>
@@ -269,15 +269,15 @@ export default function FloralThemeStudio() {
 
             {/* Active Flower Spotlight Card */}
             {activeFlower && (
-              <div className="p-4 rounded-2xl bg-sand-100/80 border border-sand-300 flex items-center justify-between text-xs">
+              <div className="p-4 rounded-2xl bg-sand-100/80 border border-sand-300/70 flex items-center justify-between text-xs">
                 <div>
                   <p className="text-berry-400 text-[10px] uppercase tracking-wider font-semibold">Active Highlight</p>
-                  <p className="font-serif text-sm font-semibold text-berry-700">{activeFlower.name}</p>
+                  <p className="font-serif text-sm font-semibold text-berry-600">{activeFlower.name}</p>
                   <p className="text-berry-600 text-[11px] mt-0.5">
                     🌸 Scent Profile: <span className="font-medium">{activeFlower.scent}</span> | Harvest: <span className="font-medium">{activeFlower.season}</span>
                   </p>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-blush/20 text-blush-600 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-blush-100/40 text-blush-600 flex items-center justify-center">
                   <Flower2 className="w-4 h-4" />
                 </div>
               </div>
@@ -287,7 +287,7 @@ export default function FloralThemeStudio() {
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={handleUseTheme}
-                className="flex-1 py-3 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-600 hover:bg-berry-700 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2 group"
+                className="flex-1 py-3 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-500 hover:bg-berry-600 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2 group"
               >
                 <span>Select This Theme for My Event</span>
                 <ArrowRight className="w-4 h-4 text-blush transform group-hover:translate-x-1 transition-transform" />

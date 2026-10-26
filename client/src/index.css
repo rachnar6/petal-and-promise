@@ -7,71 +7,112 @@
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   }
+
+  body {
+    background-color: #FDF5E4;
+    color: #6A1020;
+  }
 }
 
-/* Luxury Romantic Utility Classes */
-.font-script {
-  font-family: 'Great Vibes', cursive;
-}
+/* ─── Font helpers ─────────────────────────────── */
+.font-script    { font-family: 'Great Vibes', cursive; }
+.font-serif     { font-family: 'Playfair Display', Georgia, serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', Georgia, serif; }
 
-.font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
-}
-
-.font-cormorant {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-}
-
+/* ─── Glass cards ─────────────────────────────── */
 .glass-card {
-  background: rgba(248, 241, 236, 0.78);
+  background: rgba(253, 245, 228, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(221, 166, 178, 0.28);
+  border: 1px solid rgba(232, 160, 32, 0.22);
 }
 
 .glass-card-dark {
-  background: rgba(117, 77, 88, 0.88);
+  background: rgba(139, 26, 42, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(232, 217, 197, 0.25);
+  border: 1px solid rgba(240, 200, 120, 0.22);
 }
 
+/* ─── Gradient text ────────────────────────────── */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #A88941 0%, #D4AF37 50%, #CBB26B 100%);
+  background: linear-gradient(135deg, #B07208 0%, #E8A020 50%, #F0BB40 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-blush-gradient {
-  background: linear-gradient(135deg, #754D58 0%, #B66A7A 50%, #DDA6B2 100%);
+  background: linear-gradient(135deg, #8B1A2A 0%, #C84060 50%, #E07070 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
+/* ─── Background gradients ─────────────────────── */
 .bg-radial-glow {
-  background: radial-gradient(circle at center, rgba(221, 166, 178, 0.18) 0%, rgba(248, 241, 236, 0) 70%);
+  background: radial-gradient(circle at center, rgba(232, 160, 32, 0.16) 0%, rgba(253, 245, 228, 0) 70%);
 }
 
 .bg-heavenly-gradient {
-  background: linear-gradient(180deg, #F8F1EC 0%, #FAF0F2 35%, #F4ECE1 70%, #F8F1EC 100%);
+  background: linear-gradient(
+    160deg,
+    #FDF5E4 0%,
+    #FDF0CC 25%,
+    #FAE8D8 55%,
+    #FAE0E0 80%,
+    #FDF5E4 100%
+  );
 }
 
-/* Custom romantic scrollbar */
-::-webkit-scrollbar {
-  width: 9px;
-  height: 9px;
+/* ─── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track  { background: #FDF5E4; }
+::-webkit-scrollbar-thumb  { background: #E8A020; border-radius: 9999px; border: 2px solid #FDF5E4; }
+::-webkit-scrollbar-thumb:hover { background: #C8581A; }
+
+/* ─── Flower Blossom Petal Animation ───────────── */
+.petal-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
 }
 
-::-webkit-scrollbar-track {
-  background: #F8F1EC;
+.petal {
+  position: absolute;
+  top: -80px;
+  border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+  animation: petalFall linear infinite, petalSway ease-in-out infinite alternate;
+  will-change: transform, opacity;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #DDA6B2;
-  border-radius: 9999px;
-  border: 2px solid #F8F1EC;
+@keyframes petalFall {
+  0%   { transform: translateY(-100px) rotate(0deg);    opacity: 0; }
+  8%   { opacity: 0.85; }
+  88%  { opacity: 0.55; }
+  100% { transform: translateY(110vh) rotate(520deg); opacity: 0; }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #B66A7A;
+@keyframes petalSway {
+  0%   { margin-left: 0px; }
+  100% { margin-left: 50px; }
 }
+
+/* Blossom pop keyframe (used on SVG flowers in bg) */
+@keyframes blossomPop {
+  0%   { transform: scale(0) rotate(-15deg); opacity: 0; }
+  60%  { transform: scale(1.12) rotate(4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+.blossom-flower {
+  animation: blossomPop 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes floatSpin {
+  0%   { transform: translateY(0)   rotate(0deg); }
+  50%  { transform: translateY(-18px) rotate(8deg); }
+  100% { transform: translateY(0)   rotate(0deg); }
+}
+
+.float-spin { animation: floatSpin 7s ease-in-out infinite; }

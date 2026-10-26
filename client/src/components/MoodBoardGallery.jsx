@@ -83,15 +83,15 @@ export default function MoodBoardGallery() {
 
   return (
     <section id="gallery" className="py-24 relative bg-heavenly-gradient">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-200 text-berry-700 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sand-200 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-blush-500" />
             <span>Living Inspiration Board</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Celebration Mood Gallery
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -107,8 +107,8 @@ export default function MoodBoardGallery() {
               onClick={() => setActiveFilter(f)}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeFilter === f
-                  ? 'bg-berry-600 text-ivory shadow-romantic'
-                  : 'bg-white/80 text-berry-600 hover:bg-blush-50 border border-blush/20'
+                  ? 'bg-berry-500 text-ivory shadow-romantic'
+                  : 'bg-ivory-50/85 text-berry-600 hover:bg-blush-50 border border-blush-200/35'
               }`}
             >
               {f}
@@ -177,16 +177,16 @@ export default function MoodBoardGallery() {
       {/* Fullscreen Photo Modal */}
       {activeModalItem && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-950/70 backdrop-blur-md animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-700/70 backdrop-blur-md animate-fade-in"
           onClick={() => setActiveModalItem(null)}
         >
           <div
-            className="relative max-w-3xl w-full bg-ivory rounded-3xl overflow-hidden shadow-luxe border border-blush/30"
+            className="relative max-w-3xl w-full bg-ivory-100 rounded-3xl overflow-hidden shadow-luxe border border-blush-300/40"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setActiveModalItem(null)}
-              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-berry-900/50 backdrop-blur-md text-ivory hover:bg-berry-900 flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-berry-700/50 backdrop-blur-md text-ivory hover:bg-berry-600 flex items-center justify-center transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -197,12 +197,12 @@ export default function MoodBoardGallery() {
               className="w-full max-h-[70vh] object-cover"
             />
 
-            <div className="p-6 bg-ivory flex items-center justify-between">
+            <div className="p-6 bg-ivory-100 flex items-center justify-between">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-blush-600">
                   {activeModalItem.category}
                 </span>
-                <h3 className="font-serif text-2xl font-semibold text-berry-700">
+                <h3 className="font-serif text-2xl font-semibold text-berry-600">
                   {activeModalItem.title}
                 </h3>
                 <p className="text-xs text-berry-500 mt-1">{activeModalItem.venue}</p>
@@ -212,8 +212,8 @@ export default function MoodBoardGallery() {
                 onClick={(e) => toggleFavorite(activeModalItem, e)}
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all shadow-soft ${
                   savedFavorites.includes(activeModalItem.id)
-                    ? 'bg-blush text-berry-800'
-                    : 'bg-berry-600 text-ivory hover:bg-berry-700'
+                    ? 'bg-blush text-berry-600'
+                    : 'bg-berry-500 text-ivory hover:bg-berry-600'
                 }`}
               >
                 <Heart className={`w-3.5 h-3.5 ${savedFavorites.includes(activeModalItem.id) ? 'fill-current' : ''}`} />

@@ -219,7 +219,7 @@ export default function NewEventBooking() {
         <div className="flex items-center justify-between mb-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-berry-600 hover:text-berry-700 transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-berry-600 hover:text-berry-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Atelier</span>
@@ -227,12 +227,12 @@ export default function NewEventBooking() {
         </div>
 
         {!submittedBooking ? (
-          <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blush/30 shadow-luxe">
+          <div className="bg-ivory-50/90 backdrop-blur-md rounded-3xl p-6 sm:p-10 border border-blush-300/40 shadow-luxe">
             
             {/* Header */}
             <div className="text-center mb-8">
               <span className="font-script text-3xl text-blush-500 block">Personalized Celebration Blueprint</span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-berry-700">
+              <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-berry-600">
                 Design Your Event Plan
               </h2>
               <p className="text-xs sm:text-sm text-berry-500 mt-1 max-w-lg mx-auto">
@@ -257,10 +257,10 @@ export default function NewEventBooking() {
                     <div
                       className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold transition-all shadow-soft ${
                         isCurrent
-                          ? 'bg-berry-600 text-ivory ring-4 ring-blush/40 scale-110'
+                          ? 'bg-berry-500 text-ivory ring-4 ring-blush/40 scale-110'
                           : isPassed
-                          ? 'bg-blush text-berry-800'
-                          : 'bg-white border border-sand-300 text-berry-400'
+                          ? 'bg-blush text-berry-600'
+                          : 'bg-white border border-sand-300/70 text-berry-400'
                       }`}
                     >
                       {isPassed && !isCurrent ? <Check className="w-4 h-4" /> : s.num}
@@ -284,7 +284,7 @@ export default function NewEventBooking() {
               {/* STEP 1: Celebration Basics */}
               {step === 1 && (
                 <div className="space-y-5 animate-fade-in">
-                  <h3 className="font-serif text-xl font-semibold text-berry-700 pb-2 border-b border-sand-200">
+                  <h3 className="font-serif text-xl font-semibold text-berry-600 pb-2 border-b border-sand-200">
                     1. Celebration & Contact Details
                   </h3>
 
@@ -297,7 +297,7 @@ export default function NewEventBooking() {
                         value={formData.clientName}
                         onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
                         placeholder="Enter your full name"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
 
@@ -309,7 +309,7 @@ export default function NewEventBooking() {
                         value={formData.clientEmail}
                         onChange={(e) => setFormData({ ...formData, clientEmail: e.target.value })}
                         placeholder="Enter your email address"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
 
@@ -321,7 +321,7 @@ export default function NewEventBooking() {
                         value={formData.clientPhone}
                         onChange={(e) => setFormData({ ...formData, clientPhone: e.target.value })}
                         placeholder="Enter your phone number"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
                   </div>
@@ -332,7 +332,7 @@ export default function NewEventBooking() {
                       <select
                         value={formData.eventType}
                         onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       >
                         <option value="Wedding">Wedding</option>
                         <option value="Birthday">Milestone Birthday</option>
@@ -349,7 +349,7 @@ export default function NewEventBooking() {
                         required
                         value={formData.eventDate}
                         onChange={(e) => setFormData({ ...formData, eventDate: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
 
@@ -359,7 +359,7 @@ export default function NewEventBooking() {
                         type="time"
                         value={formData.eventTime}
                         onChange={(e) => setFormData({ ...formData, eventTime: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
                   </div>
@@ -372,7 +372,7 @@ export default function NewEventBooking() {
                         value={formData.venueName}
                         onChange={(e) => setFormData({ ...formData, venueName: e.target.value })}
                         placeholder="Venue name (e.g. City Hall, Conservatory Manor)"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
 
@@ -385,7 +385,7 @@ export default function NewEventBooking() {
                         value={formData.guestCount}
                         onChange={(e) => setFormData({ ...formData, guestCount: e.target.value })}
                         placeholder="e.g. 100"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
                   </div>
@@ -395,7 +395,7 @@ export default function NewEventBooking() {
               {/* STEP 2: Theme & Palette */}
               {step === 2 && (
                 <div className="space-y-6 animate-fade-in">
-                  <h3 className="font-serif text-xl font-semibold text-berry-700 pb-2 border-b border-sand-200">
+                  <h3 className="font-serif text-xl font-semibold text-berry-600 pb-2 border-b border-sand-200">
                     2. Select Your Floral Theme & Palette
                   </h3>
 
@@ -413,11 +413,11 @@ export default function NewEventBooking() {
                           className={`p-4 rounded-2xl border cursor-pointer transition-all ${
                             isSelected
                               ? 'border-blush-500 bg-blush-50/80 shadow-soft scale-[1.01]'
-                              : 'border-sand-300 bg-white hover:bg-sand-50'
+                              : 'border-sand-300/70 bg-white hover:bg-sand-50'
                           }`}
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-serif font-semibold text-sm text-berry-700">{theme.name}</h4>
+                            <h4 className="font-serif font-semibold text-sm text-berry-600">{theme.name}</h4>
                             {isSelected && <Check className="w-4 h-4 text-blush-600" />}
                           </div>
                           <p className="text-[11px] text-berry-500 mb-3">{theme.vibe}</p>
@@ -444,7 +444,7 @@ export default function NewEventBooking() {
                       type="text"
                       value={formData.packageName}
                       onChange={(e) => setFormData({ ...formData, packageName: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                     />
                   </div>
                 </div>
@@ -453,7 +453,7 @@ export default function NewEventBooking() {
               {/* STEP 3: Botanicals & Fragrance */}
               {step === 3 && (
                 <div className="space-y-6 animate-fade-in">
-                  <h3 className="font-serif text-xl font-semibold text-berry-700 pb-2 border-b border-sand-200">
+                  <h3 className="font-serif text-xl font-semibold text-berry-600 pb-2 border-b border-sand-200">
                     3. Flower Varieties & Fragrance Profiles
                   </h3>
 
@@ -471,8 +471,8 @@ export default function NewEventBooking() {
                             onClick={() => toggleFlower(flower)}
                             className={`px-3.5 py-2 rounded-full text-xs font-medium transition-all ${
                               isChosen
-                                ? 'bg-berry-600 text-ivory shadow-soft'
-                                : 'bg-sand-100 text-berry-600 hover:bg-sand-200 border border-sand-300'
+                                ? 'bg-berry-500 text-ivory shadow-soft'
+                                : 'bg-sand-100 text-berry-600 hover:bg-sand-200 border border-sand-300/70'
                             }`}
                           >
                             {isChosen ? '✓ ' : '+ '} {flower}
@@ -488,7 +488,7 @@ export default function NewEventBooking() {
                       <select
                         value={formData.scentLevel}
                         onChange={(e) => setFormData({ ...formData, scentLevel: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       >
                         <option value="Subtle">Subtle & Gentle (Sensory friendly)</option>
                         <option value="Moderate">Moderate (Classic garden rose & eucalyptus aroma)</option>
@@ -503,7 +503,7 @@ export default function NewEventBooking() {
                         value={formData.colorDominance}
                         onChange={(e) => setFormData({ ...formData, colorDominance: e.target.value })}
                         placeholder="e.g. 70% Ivory, 20% Blush, 10% Gold accents"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
                   </div>
@@ -513,7 +513,7 @@ export default function NewEventBooking() {
               {/* STEP 4: Arrangements & Budget */}
               {step === 4 && (
                 <div className="space-y-6 animate-fade-in">
-                  <h3 className="font-serif text-xl font-semibold text-berry-700 pb-2 border-b border-sand-200">
+                  <h3 className="font-serif text-xl font-semibold text-berry-600 pb-2 border-b border-sand-200">
                     4. Required Arrangements & Budget Allocation
                   </h3>
 
@@ -531,11 +531,11 @@ export default function NewEventBooking() {
                           key={item.key}
                           onClick={() => setFormData({ ...formData, [item.key]: !active })}
                           className={`p-3 rounded-xl border cursor-pointer text-xs flex items-center justify-between transition-colors ${
-                            active ? 'bg-blush-50 border-blush-400 font-semibold text-berry-700' : 'bg-white border-sand-200 text-berry-500'
+                            active ? 'bg-blush-50 border-blush-400 font-semibold text-berry-600' : 'bg-white border-sand-200 text-berry-500'
                           }`}
                         >
                           <span>{item.label}</span>
-                          <span className={active ? 'text-berry-700 font-bold' : 'text-gray-300'}>
+                          <span className={active ? 'text-berry-600 font-bold' : 'text-gray-300'}>
                             {active ? '✓' : '—'}
                           </span>
                         </div>
@@ -551,7 +551,7 @@ export default function NewEventBooking() {
                         step="250"
                         value={formData.budgetTotal}
                         onChange={(e) => setFormData({ ...formData, budgetTotal: Number(e.target.value) })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
 
@@ -562,7 +562,7 @@ export default function NewEventBooking() {
                         value={formData.inspirationUrl}
                         onChange={(e) => setFormData({ ...formData, inspirationUrl: e.target.value })}
                         placeholder="https://..."
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                     </div>
                   </div>
@@ -574,7 +574,7 @@ export default function NewEventBooking() {
                       value={formData.specialNotes}
                       onChange={(e) => setFormData({ ...formData, specialNotes: e.target.value })}
                       placeholder="Add any specific requests, candle preferences, setup time windows, etc."
-                      className="w-full px-3.5 py-2 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush resize-none"
+                      className="w-full px-3.5 py-2 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush resize-none"
                     />
                   </div>
                 </div>
@@ -583,12 +583,12 @@ export default function NewEventBooking() {
               {/* STEP 5: Summary Review */}
               {step === 5 && (
                 <div className="space-y-6 animate-fade-in">
-                  <h3 className="font-serif text-xl font-semibold text-berry-700 pb-2 border-b border-sand-200">
+                  <h3 className="font-serif text-xl font-semibold text-berry-600 pb-2 border-b border-sand-200">
                     5. Review Celebration Blueprint
                   </h3>
 
-                  <div className="bg-sand-100/70 rounded-2xl p-6 border border-sand-300 space-y-4 text-xs text-berry-700">
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4 border-b border-sand-300">
+                  <div className="bg-sand-100/70 rounded-2xl p-6 border border-sand-300/70 space-y-4 text-xs text-berry-600">
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pb-4 border-b border-sand-300/70">
                       <div>
                         <span className="text-[10px] uppercase tracking-wider text-berry-400 block">Host Name</span>
                         <strong className="text-sm">{formData.clientName}</strong>
@@ -607,7 +607,7 @@ export default function NewEventBooking() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-sand-300">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-4 border-b border-sand-300/70">
                       <div>
                         <span className="text-[10px] uppercase tracking-wider text-berry-400 block">Floral Theme</span>
                         <strong className="text-sm">{formData.themeName}</strong>
@@ -620,7 +620,7 @@ export default function NewEventBooking() {
 
                       <div>
                         <span className="text-[10px] uppercase tracking-wider text-berry-400 block">Investment</span>
-                        <strong className="text-xl text-berry-700">${Number(formData.budgetTotal).toLocaleString()} USD</strong>
+                        <strong className="text-xl text-berry-600">${Number(formData.budgetTotal).toLocaleString()} USD</strong>
                         <p className="text-[11px] text-berry-500 mt-0.5">Package: {formData.packageName}</p>
                       </div>
                     </div>
@@ -630,7 +630,7 @@ export default function NewEventBooking() {
                       <p className="text-berry-600 font-medium">{formData.primaryFlowers.join(', ')}</p>
                     </div>
 
-                    <div className="p-3 bg-blush-50 rounded-xl border border-blush/30 text-[11px] text-sage-800 flex items-center gap-2">
+                    <div className="p-3 bg-blush-50 rounded-xl border border-blush-300/40 text-[11px] text-sage-800 flex items-center gap-2">
                       <Sparkles className="w-4 h-4 text-blush-500 flex-shrink-0" />
                       <span>Upon submission, details are recorded to the database and will trigger the automated Pabbly Connect workflow to notify our florists and sync to Google Sheets.</span>
                     </div>
@@ -644,7 +644,7 @@ export default function NewEventBooking() {
                   <button
                     type="button"
                     onClick={handleBack}
-                    className="py-2.5 px-5 rounded-full text-xs font-semibold uppercase tracking-wider border border-sand-300 text-berry-600 hover:bg-sand-100 transition-colors flex items-center gap-1.5"
+                    className="py-2.5 px-5 rounded-full text-xs font-semibold uppercase tracking-wider border border-sand-300/70 text-berry-600 hover:bg-sand-100 transition-colors flex items-center gap-1.5"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
                     <span>Back</span>
@@ -655,7 +655,7 @@ export default function NewEventBooking() {
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="py-3 px-7 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory hover:bg-berry-700 shadow-romantic transition-all flex items-center gap-2"
+                    className="py-3 px-7 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory hover:bg-berry-600 shadow-romantic transition-all flex items-center gap-2"
                   >
                     <span>Proceed to Next Step</span>
                     <ArrowRight className="w-3.5 h-3.5 text-blush" />
@@ -664,7 +664,7 @@ export default function NewEventBooking() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory hover:bg-berry-700 shadow-romantic hover:shadow-luxe transition-all flex items-center gap-2"
+                    className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory hover:bg-berry-600 shadow-romantic hover:shadow-luxe transition-all flex items-center gap-2"
                   >
                     {loading ? (
                       <>
@@ -684,22 +684,22 @@ export default function NewEventBooking() {
           </div>
         ) : (
           /* Confirmation Success Screen */
-          <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-blush/30 shadow-luxe text-center space-y-6 animate-fade-in">
+          <div className="bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-12 border border-blush-300/40 shadow-luxe text-center space-y-6 animate-fade-in">
             <div className="w-20 h-20 rounded-full bg-sage-100 border border-sage-300 flex items-center justify-center mx-auto text-sage-600 shadow-romantic">
               <CheckCircle2 className="w-12 h-12" />
             </div>
 
             <span className="font-script text-5xl text-blush-500 block">Félicitations!</span>
-            <h2 className="font-serif text-3xl font-semibold text-berry-700">
+            <h2 className="font-serif text-3xl font-semibold text-berry-600">
               Your Celebration Blueprint is Confirmed
             </h2>
 
             <p className="text-sm text-berry-600 max-w-lg mx-auto">
-              Your reservation reference is <span className="font-mono font-bold text-berry-700 bg-blush-50 px-2 py-0.5 rounded border border-blush/30">{submittedBooking.bookingReference}</span>.
+              Your reservation reference is <span className="font-mono font-bold text-berry-600 bg-blush-50 px-2 py-0.5 rounded border border-blush-300/40">{submittedBooking.bookingReference}</span>.
               Our floral architects will begin reviewing your vision and stem availability.
             </p>
 
-            <div className="p-4 rounded-2xl bg-sand-100/80 border border-sand-300 max-w-md mx-auto text-left text-xs text-berry-700 space-y-2">
+            <div className="p-4 rounded-2xl bg-sand-100/80 border border-sand-300/70 max-w-md mx-auto text-left text-xs text-berry-600 space-y-2">
               <p><strong>Automation Status:</strong></p>
               <p>• Pabbly Workflow Trigger: <span className="text-sage-600 font-semibold">Active & Emitted</span></p>
               <p>• Sheets Logging: <span className="text-sage-600 font-semibold">Logged to Google Sheets</span></p>
@@ -709,13 +709,13 @@ export default function NewEventBooking() {
             <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
               <Link
                 to="/portal"
-                className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory hover:bg-berry-700 shadow-romantic transition-all"
+                className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory hover:bg-berry-600 shadow-romantic transition-all"
               >
                 Track in My Portal
               </Link>
               <Link
                 to="/"
-                className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider border border-sand-300 text-berry-700 hover:bg-sand-100 transition-all"
+                className="py-3 px-8 rounded-full text-xs font-semibold uppercase tracking-wider border border-sand-300/70 text-berry-600 hover:bg-sand-100 transition-all"
               >
                 Return to Home
               </Link>

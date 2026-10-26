@@ -12,16 +12,16 @@ export default function LoveLetters() {
   }, []);
 
   return (
-    <section className="py-24 relative bg-ivory">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 relative bg-ivory-100">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush/20 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100/40 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
             <Heart className="w-3.5 h-3.5 text-blush-500 fill-current" />
             <span>Love Letters & Kind Words</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Memories in Full Bloom
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -34,7 +34,7 @@ export default function LoveLetters() {
           {testimonials.map((t) => (
             <div
               key={t._id}
-              className="bg-white/80 rounded-3xl p-8 border border-blush/30 shadow-soft hover:shadow-luxe transition-all duration-300 flex flex-col justify-between relative group"
+              className="bg-ivory-50/85 rounded-3xl p-8 border border-blush-300/40 shadow-soft hover:shadow-luxe transition-all duration-300 flex flex-col justify-between relative group"
             >
               <Quote className="w-10 h-10 text-blush/30 absolute top-6 right-6 group-hover:text-blush/50 transition-colors" />
 
@@ -46,7 +46,7 @@ export default function LoveLetters() {
                   ))}
                 </div>
 
-                <p className="font-serif italic text-berry-700 text-base leading-relaxed">
+                <p className="font-serif italic text-berry-600 text-base leading-relaxed">
                   "{t.quote}"
                 </p>
               </div>
@@ -55,10 +55,10 @@ export default function LoveLetters() {
                 <img
                   src={t.avatarUrl}
                   alt={t.author}
-                  className="w-12 h-12 rounded-full object-cover border border-blush/50 shadow-soft"
+                  className="w-12 h-12 rounded-full object-cover border border-blush-300/50 shadow-soft"
                 />
                 <div>
-                  <h4 className="font-serif font-semibold text-sm text-berry-700">{t.author}</h4>
+                  <h4 className="font-serif font-semibold text-sm text-berry-600">{t.author}</h4>
                   <p className="text-[11px] text-berry-400">{t.celebration} • {t.venue}</p>
                 </div>
               </div>

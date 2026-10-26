@@ -80,11 +80,11 @@ export default function CustomerPortal({ onOpenConsultation }) {
   };
 
   return (
-    <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8 bg-heavenly-gradient relative">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <div className="min-h-screen py-12 bg-heavenly-gradient relative">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 space-y-8">
         
         {/* Welcome Header */}
-        <div className="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-white/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
             <img
               src={user?.photoURL || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80'}
@@ -92,11 +92,11 @@ export default function CustomerPortal({ onOpenConsultation }) {
               className="w-16 h-16 rounded-full object-cover border-2 border-blush shadow-soft"
             />
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blush/20 text-[10px] font-semibold text-berry-700 uppercase tracking-wider mb-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-blush-100/40 text-[10px] font-semibold text-berry-600 uppercase tracking-wider mb-1">
                 <Sparkles className="w-3 h-3 text-blush-500" />
                 <span>Celebration Host Portal</span>
               </div>
-              <h1 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-700">
+              <h1 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-600">
                 Bonjour, {user?.name || 'Celebration Host'}
               </h1>
               <p className="text-xs text-berry-500">
@@ -108,7 +108,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenConsultation}
-              className="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-sand-100 hover:bg-sand-200 border border-sand-300 text-berry-700 transition-all shadow-soft flex items-center gap-1.5"
+              className="px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-sand-100 hover:bg-sand-200 border border-sand-300/70 text-berry-600 transition-all shadow-soft flex items-center gap-1.5"
             >
               <Calendar className="w-3.5 h-3.5 text-sage-600" />
               <span>Book Tasting</span>
@@ -116,7 +116,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
 
             <Link
               to="/portal/new-event"
-              className="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 hover:bg-berry-700 text-ivory transition-all shadow-romantic flex items-center gap-1.5"
+              className="px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 hover:bg-berry-600 text-ivory transition-all shadow-romantic flex items-center gap-1.5"
             >
               <Plus className="w-3.5 h-3.5 text-blush" />
               <span>New Celebration</span>
@@ -144,7 +144,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
                 </p>
 
                 {/* Countdown pill */}
-                <div className="inline-flex items-center gap-3 bg-berry-900/50 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blush/20 text-xs mt-2">
+                <div className="inline-flex items-center gap-3 bg-berry-700/50 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blush-200/35 text-xs mt-2">
                   <Clock className="w-4 h-4 text-blush" />
                   <span>
                     Countdown: <strong className="text-blush text-sm">{calculateDaysLeft(upcomingBooking.eventDate)} Days Left</strong> until vows & blooms!
@@ -184,12 +184,12 @@ export default function CustomerPortal({ onOpenConsultation }) {
         )}
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-blush/20 gap-6">
+        <div className="flex border-b border-blush-200/35 gap-6">
           <button
             onClick={() => setActiveTab('bookings')}
             className={`pb-3 text-sm font-serif font-semibold transition-all relative ${
               activeTab === 'bookings'
-                ? 'text-berry-700 border-b-2 border-berry-700'
+                ? 'text-berry-600 border-b-2 border-berry-700'
                 : 'text-berry-400 hover:text-berry-600'
             }`}
           >
@@ -200,7 +200,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
             onClick={() => setActiveTab('consultations')}
             className={`pb-3 text-sm font-serif font-semibold transition-all relative ${
               activeTab === 'consultations'
-                ? 'text-berry-700 border-b-2 border-berry-700'
+                ? 'text-berry-600 border-b-2 border-berry-700'
                 : 'text-berry-400 hover:text-berry-600'
             }`}
           >
@@ -217,15 +217,15 @@ export default function CustomerPortal({ onOpenConsultation }) {
                 <span>Loading your celebration reservations...</span>
               </div>
             ) : bookings.length === 0 ? (
-              <div className="bg-white/80 rounded-3xl p-12 text-center border border-sand-300 space-y-4">
+              <div className="bg-ivory-50/85 rounded-3xl p-12 text-center border border-sand-300/70 space-y-4">
                 <Flower2 className="w-12 h-12 text-blush mx-auto" />
-                <h3 className="font-serif text-xl font-semibold text-berry-700">No Celebrations Yet</h3>
+                <h3 className="font-serif text-xl font-semibold text-berry-600">No Celebrations Yet</h3>
                 <p className="text-xs text-berry-500 max-w-sm mx-auto">
                   Begin designing your dream wedding, anniversary or milestone birthday with our bespoke floral architect.
                 </p>
                 <Link
                   to="/portal/new-event"
-                  className="inline-block py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory shadow-soft"
+                  className="inline-block py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory shadow-soft"
                 >
                   Create First Celebration
                 </Link>
@@ -234,17 +234,17 @@ export default function CustomerPortal({ onOpenConsultation }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {bookings.map((booking) => {
                   const statusColors = {
-                    Pending: 'bg-sand-200 text-berry-700 border-sand-300',
+                    Pending: 'bg-sand-200 text-berry-600 border-sand-300/70',
                     Confirmed: 'bg-sage-100 text-sage-800 border-sage-300',
-                    'In Progress': 'bg-blush-100 text-berry-700 border-blush-300',
-                    Completed: 'bg-berry-100 text-berry-800 border-berry-300',
+                    'In Progress': 'bg-blush-100 text-berry-600 border-blush-300',
+                    Completed: 'bg-berry-100 text-berry-600 border-berry-300',
                     Cancelled: 'bg-gray-100 text-gray-500 border-gray-300'
                   };
 
                   return (
                     <div
                       key={booking._id || booking.bookingReference}
-                      className="bg-white/90 rounded-3xl p-6 border border-blush/25 shadow-soft hover:shadow-luxe transition-all flex flex-col justify-between"
+                      className="bg-ivory-50/90 rounded-3xl p-6 border border-blush/25 shadow-soft hover:shadow-luxe transition-all flex flex-col justify-between"
                     >
                       <div>
                         {/* Top reference and status */}
@@ -257,7 +257,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
                           </span>
                         </div>
 
-                        <h3 className="font-serif text-xl font-semibold text-berry-700">
+                        <h3 className="font-serif text-xl font-semibold text-berry-600">
                           {booking.packageName || 'Custom Floral Celebration'}
                         </h3>
                         <p className="text-xs text-berry-500 mt-0.5">
@@ -267,19 +267,19 @@ export default function CustomerPortal({ onOpenConsultation }) {
                         <div className="grid grid-cols-2 gap-3 mt-4 pt-4 border-t border-sand-200 text-xs">
                           <div>
                             <span className="text-[10px] text-berry-400 uppercase font-semibold block">Date</span>
-                            <span className="font-medium text-berry-700">{booking.eventDate} ({booking.eventTime || '17:00'})</span>
+                            <span className="font-medium text-berry-600">{booking.eventDate} ({booking.eventTime || '17:00'})</span>
                           </div>
                           <div>
                             <span className="text-[10px] text-berry-400 uppercase font-semibold block">Venue</span>
-                            <span className="font-medium text-berry-700 truncate block">{booking.venue?.name || 'TBD'}</span>
+                            <span className="font-medium text-berry-600 truncate block">{booking.venue?.name || 'TBD'}</span>
                           </div>
                           <div>
                             <span className="text-[10px] text-berry-400 uppercase font-semibold block">Theme</span>
-                            <span className="font-medium text-berry-700 truncate block">{booking.theme?.name || 'Blush & Sage'}</span>
+                            <span className="font-medium text-berry-600 truncate block">{booking.theme?.name || 'Blush & Sage'}</span>
                           </div>
                           <div>
                             <span className="text-[10px] text-berry-400 uppercase font-semibold block">Investment</span>
-                            <span className="font-bold text-berry-700">${(booking.budget?.total || 0).toLocaleString()}</span>
+                            <span className="font-bold text-berry-600">${(booking.budget?.total || 0).toLocaleString()}</span>
                           </div>
                         </div>
                       </div>
@@ -288,7 +288,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
                       <div className="pt-5 mt-4 border-t border-sand-200 flex items-center justify-between">
                         <button
                           onClick={() => setSelectedBooking(booking)}
-                          className="text-xs font-semibold uppercase tracking-wider text-berry-700 hover:text-blush-600 transition-colors flex items-center gap-1"
+                          className="text-xs font-semibold uppercase tracking-wider text-berry-600 hover:text-blush-600 transition-colors flex items-center gap-1"
                         >
                           <FileText className="w-3.5 h-3.5" />
                           <span>View Full Blueprint</span>
@@ -315,15 +315,15 @@ export default function CustomerPortal({ onOpenConsultation }) {
         {activeTab === 'consultations' && (
           <div className="space-y-4">
             {consultations.length === 0 ? (
-              <div className="bg-white/80 rounded-3xl p-12 text-center border border-sand-300 space-y-4">
+              <div className="bg-ivory-50/85 rounded-3xl p-12 text-center border border-sand-300/70 space-y-4">
                 <Calendar className="w-12 h-12 text-sage-600 mx-auto" />
-                <h3 className="font-serif text-xl font-semibold text-berry-700">No Scheduled Tastings</h3>
+                <h3 className="font-serif text-xl font-semibold text-berry-600">No Scheduled Tastings</h3>
                 <p className="text-xs text-berry-500 max-w-sm mx-auto">
                   Meet 1-on-1 with our master florists to smell garden blooms, test silk ribbons, and review stage mockups.
                 </p>
                 <button
                   onClick={onOpenConsultation}
-                  className="py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory shadow-soft"
+                  className="py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory shadow-soft"
                 >
                   Schedule Private Tasting
                 </button>
@@ -331,7 +331,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {consultations.map((c) => (
-                  <div key={c._id} className="bg-white rounded-3xl p-6 border border-blush/20 shadow-soft space-y-3">
+                  <div key={c._id} className="bg-white rounded-3xl p-6 border border-blush-200/35 shadow-soft space-y-3">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-semibold uppercase px-2.5 py-0.5 rounded-full bg-sage-100 text-sage-700">
                         {c.status}
@@ -339,7 +339,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
                       <span className="text-xs text-berry-400">{c.preferredDate}</span>
                     </div>
 
-                    <h4 className="font-serif text-lg font-semibold text-berry-700">{c.consultationType}</h4>
+                    <h4 className="font-serif text-lg font-semibold text-berry-600">{c.consultationType}</h4>
                     <p className="text-xs text-berry-500">{c.notes || 'No special notes provided'}</p>
 
                     <div className="pt-3 border-t border-sand-200 flex items-center justify-between">
@@ -368,16 +368,16 @@ export default function CustomerPortal({ onOpenConsultation }) {
       {/* Booking Details Modal */}
       {selectedBooking && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-950/60 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-700/60 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedBooking(null)}
         >
           <div
-            className="relative max-w-2xl w-full bg-ivory rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe max-h-[90vh] overflow-y-auto"
+            className="relative max-w-2xl w-full bg-ivory-100 rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedBooking(null)}
-              className="absolute top-5 right-5 p-2 rounded-full text-berry-400 hover:text-berry-700"
+              className="absolute top-5 right-5 p-2 rounded-full text-berry-400 hover:text-berry-600"
             >
               <X className="w-5 h-5" />
             </button>
@@ -386,16 +386,16 @@ export default function CustomerPortal({ onOpenConsultation }) {
               <span className="text-xs font-semibold uppercase tracking-wider text-blush-600">
                 Reservation #{selectedBooking.bookingReference}
               </span>
-              <h3 className="font-serif text-2xl font-semibold text-berry-700 mt-0.5">
+              <h3 className="font-serif text-2xl font-semibold text-berry-600 mt-0.5">
                 {selectedBooking.packageName}
               </h3>
               <p className="text-xs text-berry-500 mt-1">
-                Status: <strong className="text-berry-700">{selectedBooking.status}</strong> • Created {new Date(selectedBooking.createdAt).toLocaleDateString()}
+                Status: <strong className="text-berry-600">{selectedBooking.status}</strong> • Created {new Date(selectedBooking.createdAt).toLocaleDateString()}
               </p>
             </div>
 
-            <div className="space-y-4 text-xs text-berry-700">
-              <div className="grid grid-cols-2 gap-4 p-4 rounded-2xl bg-white border border-sand-300">
+            <div className="space-y-4 text-xs text-berry-600">
+              <div className="grid grid-cols-2 gap-4 p-4 rounded-2xl bg-white border border-sand-300/70">
                 <div>
                   <p className="text-[10px] uppercase font-semibold text-berry-400">Venue</p>
                   <p className="font-medium">{selectedBooking.venue?.name || 'TBD'} ({selectedBooking.venue?.city || 'Local'})</p>
@@ -410,12 +410,12 @@ export default function CustomerPortal({ onOpenConsultation }) {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase font-semibold text-berry-400">Budget</p>
-                  <p className="font-bold text-sm text-berry-700">${(selectedBooking.budget?.total || 0).toLocaleString()}</p>
+                  <p className="font-bold text-sm text-berry-600">${(selectedBooking.budget?.total || 0).toLocaleString()}</p>
                 </div>
               </div>
 
               {selectedBooking.flowerPreferences && (
-                <div className="p-4 rounded-2xl bg-white border border-sand-300 space-y-1">
+                <div className="p-4 rounded-2xl bg-white border border-sand-300/70 space-y-1">
                   <p className="text-[10px] uppercase font-semibold text-berry-400">Flower Preferences</p>
                   <p className="font-medium">{(selectedBooking.flowerPreferences.primaryFlowers || []).join(', ')}</p>
                   <p className="text-[11px] text-berry-500">Fragrance: {selectedBooking.flowerPreferences.scentLevel}</p>
@@ -423,7 +423,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
               )}
 
               {selectedBooking.specialNotes && (
-                <div className="p-4 rounded-2xl bg-white border border-sand-300">
+                <div className="p-4 rounded-2xl bg-white border border-sand-300/70">
                   <p className="text-[10px] uppercase font-semibold text-berry-400 mb-1">Celebration Notes</p>
                   <p className="italic text-berry-600">{selectedBooking.specialNotes}</p>
                 </div>
@@ -449,7 +449,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
             <div className="mt-6 pt-4 border-t border-sand-200 flex justify-end">
               <button
                 onClick={() => setSelectedBooking(null)}
-                className="py-2 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-sand-200 text-berry-700"
+                className="py-2 px-6 rounded-full text-xs font-semibold uppercase tracking-wider bg-sand-200 text-berry-600"
               >
                 Close
               </button>
@@ -461,14 +461,14 @@ export default function CustomerPortal({ onOpenConsultation }) {
       {/* Cancellation Confirmation Modal */}
       {cancelModalBooking && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-950/60 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-700/60 backdrop-blur-sm animate-fade-in"
           onClick={() => setCancelModalBooking(null)}
         >
           <div
-            className="relative max-w-md w-full bg-ivory rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe"
+            className="relative max-w-md w-full bg-ivory-100 rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="font-serif text-xl font-semibold text-berry-700">Cancel Reservation</h3>
+            <h3 className="font-serif text-xl font-semibold text-berry-600">Cancel Reservation</h3>
             <p className="text-xs text-berry-500 mt-1">
               Are you sure you want to cancel reservation <strong>#{cancelModalBooking.bookingReference}</strong>?
             </p>
@@ -480,7 +480,7 @@ export default function CustomerPortal({ onOpenConsultation }) {
                 value={cancelReason}
                 onChange={(e) => setCancelReason(e.target.value)}
                 placeholder="Change of venue, rescheduled date, etc."
-                className="w-full px-3 py-2 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush resize-none"
+                className="w-full px-3 py-2 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush resize-none"
               />
             </div>
 

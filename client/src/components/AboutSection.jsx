@@ -3,13 +3,13 @@ import { Flower2, Sparkles, HeartHandshake, ShieldCheck, Leaf, ArrowRight } from
 
 export default function AboutSection({ onOpenConsultation }) {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-ivory">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 relative overflow-hidden bg-ivory-100">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Collage Images */}
           <div className="lg:col-span-6 relative">
-            <div className="relative z-10 rounded-3xl overflow-hidden aspect-[4/5] shadow-luxe border border-blush/30">
+            <div className="relative z-10 rounded-3xl overflow-hidden aspect-[4/5] shadow-luxe border border-blush-300/40">
               <img
                 src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1000&q=80"
                 alt="Master floral arranging"
@@ -18,13 +18,13 @@ export default function AboutSection({ onOpenConsultation }) {
             </div>
 
             {/* Overlapping small accent card */}
-            <div className="absolute -bottom-8 -right-6 z-20 w-64 bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-romantic border border-blush/30 hidden sm:block animate-float-slow">
+            <div className="absolute -bottom-8 -right-6 z-20 w-64 bg-ivory-50/90 backdrop-blur-md p-5 rounded-2xl shadow-romantic border border-blush-300/40 hidden sm:block animate-float-slow">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-blush-100 flex items-center justify-center text-blush-600">
                   <Leaf className="w-5 h-5" />
                 </div>
                 <div>
-                  <p className="text-xs font-serif font-bold text-berry-700">100% Sustainable</p>
+                  <p className="text-xs font-serif font-bold text-berry-600">100% Sustainable</p>
                   <p className="text-[10px] text-berry-400">Foam-free, locally harvested stems</p>
                 </div>
               </div>
@@ -33,12 +33,12 @@ export default function AboutSection({ onOpenConsultation }) {
 
           {/* Right Text Story */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush/20 text-berry-600 text-xs font-semibold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100/40 text-berry-600 text-xs font-semibold uppercase tracking-wider">
               <Sparkles className="w-3.5 h-3.5 text-blush-500" />
               <span>Our Atelier Philosophy</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+            <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
               Crafting Living Poetry for Eternal Promises
             </h2>
 
@@ -51,22 +51,22 @@ export default function AboutSection({ onOpenConsultation }) {
             </p>
 
             {/* 3 Pillars */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-sand-300">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-sand-300/70">
               <div className="space-y-1">
                 <span className="font-serif text-2xl font-bold text-blush-600">500+</span>
-                <p className="text-xs font-semibold text-berry-700">Celebrations Styled</p>
+                <p className="text-xs font-semibold text-berry-600">Celebrations Styled</p>
                 <p className="text-[11px] text-berry-400">Weddings, galas & proposals</p>
               </div>
 
               <div className="space-y-1">
                 <span className="font-serif text-2xl font-bold text-sage-600">40+</span>
-                <p className="text-xs font-semibold text-berry-700">Artisan Bloom Growers</p>
+                <p className="text-xs font-semibold text-berry-600">Artisan Bloom Growers</p>
                 <p className="text-[11px] text-berry-400">Direct regenerative farms</p>
               </div>
 
               <div className="space-y-1">
                 <span className="font-serif text-2xl font-bold text-berry-600">100%</span>
-                <p className="text-xs font-semibold text-berry-700">Bespoke Design</p>
+                <p className="text-xs font-semibold text-berry-600">Bespoke Design</p>
                 <p className="text-[11px] text-berry-400">Personalized mood boards</p>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default function AboutSection({ onOpenConsultation }) {
             <div className="pt-4">
               <button
                 onClick={onOpenConsultation}
-                className="py-3 px-7 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-600 hover:bg-berry-700 shadow-romantic transition-all duration-300 inline-flex items-center gap-2 group"
+                className="py-3 px-7 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-500 hover:bg-berry-600 shadow-romantic transition-all duration-300 inline-flex items-center gap-2 group"
               >
                 <span>Reserve a Design Session</span>
                 <ArrowRight className="w-4 h-4 text-blush transform group-hover:translate-x-1 transition-transform" />

@@ -47,15 +47,15 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-24 relative bg-heavenly-gradient">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush/20 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100/40 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
             <Mail className="w-3.5 h-3.5 text-blush-500" />
             <span>Connect with our Florists</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Begin Your Celebration Journey
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -67,8 +67,8 @@ export default function ContactSection() {
           
           {/* Left: Contact Info & Atelier Details */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="bg-white/80 rounded-3xl p-8 border border-blush/30 shadow-soft space-y-6">
-              <h3 className="font-serif text-2xl font-semibold text-berry-700">
+            <div className="bg-ivory-50/85 rounded-3xl p-8 border border-blush-300/40 shadow-soft space-y-6">
+              <h3 className="font-serif text-2xl font-semibold text-berry-600">
                 The Petal & Promise Atelier
               </h3>
               <p className="text-xs sm:text-sm text-berry-500">
@@ -77,11 +77,11 @@ export default function ContactSection() {
 
               <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-blush/20 flex items-center justify-center text-blush-600 mt-0.5">
+                  <div className="w-9 h-9 rounded-full bg-blush-100/40 flex items-center justify-center text-blush-600 mt-0.5">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-berry-700">Main Floral Studio</p>
+                    <p className="text-xs font-semibold text-berry-600">Main Floral Studio</p>
                     <p className="text-xs text-berry-500">428 Maiden Lane, San Francisco, CA</p>
                   </div>
                 </div>
@@ -91,7 +91,7 @@ export default function ContactSection() {
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-berry-700">Concierge Desk</p>
+                    <p className="text-xs font-semibold text-berry-600">Concierge Desk</p>
                     <p className="text-xs text-berry-500">+1 (415) 890-ROSE (7673)</p>
                   </div>
                 </div>
@@ -101,13 +101,13 @@ export default function ContactSection() {
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-berry-700">Curator Inquiries</p>
+                    <p className="text-xs font-semibold text-berry-600">Curator Inquiries</p>
                     <p className="text-xs text-berry-500">concierge@petalandpromise.com</p>
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-sand-100/70 border border-sand-300 text-xs text-berry-600">
+              <div className="p-4 rounded-2xl bg-sand-100/70 border border-sand-300/70 text-xs text-berry-600">
                 <p className="font-semibold mb-1">🌿 Automated Workflow Notice</p>
                 <p className="text-[11px] text-berry-500">
                   Enquiries are securely logged to MongoDB and immediately trigger our Pabbly Connect webhook, recording details to Google Sheets and sending an instant personalized confirmation to your email.
@@ -117,7 +117,7 @@ export default function ContactSection() {
           </div>
 
           {/* Right: Enquiry Form */}
-          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-blush/30 shadow-luxe">
+          <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-blush-300/40 shadow-luxe">
             {!submitted ? (
               <form onSubmit={handleSubmit} className="space-y-5">
                 {error && (
@@ -135,7 +135,7 @@ export default function ContactSection() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Enter your full name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
 
@@ -147,7 +147,7 @@ export default function ContactSection() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="Enter your email address"
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function ContactSection() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="Enter your phone number"
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
 
@@ -169,7 +169,7 @@ export default function ContactSection() {
                     <select
                       value={formData.eventType}
                       onChange={(e) => setFormData({ ...formData, eventType: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors"
                     >
                       <option value="Wedding">Wedding</option>
                       <option value="Birthday">Milestone Birthday</option>
@@ -186,7 +186,7 @@ export default function ContactSection() {
                       value={formData.estimatedDate}
                       onChange={(e) => setFormData({ ...formData, estimatedDate: e.target.value })}
                       placeholder="e.g. Fall 2026"
-                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors"
                     />
                   </div>
                 </div>
@@ -199,14 +199,14 @@ export default function ContactSection() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your venue, colors, favorite flowers, guest count, or any inspiration images you love..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-sand-300 text-sm text-berry-700 focus:outline-none focus:border-blush transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl border border-sand-300/70 text-sm text-berry-600 focus:outline-none focus:border-blush transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-600 hover:bg-berry-700 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full py-3.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-500 hover:bg-berry-600 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
@@ -226,7 +226,7 @@ export default function ContactSection() {
                 <div className="w-16 h-16 rounded-full bg-sage-100 border border-sage-300 flex items-center justify-center mx-auto text-sage-600 shadow-soft">
                   <CheckCircle2 className="w-9 h-9" />
                 </div>
-                <h3 className="font-serif text-2xl font-semibold text-berry-700">
+                <h3 className="font-serif text-2xl font-semibold text-berry-600">
                   Enquiry Received with Gratitude
                 </h3>
                 <p className="text-xs sm:text-sm text-berry-500 max-w-md mx-auto">
@@ -246,7 +246,7 @@ export default function ContactSection() {
                       message: ''
                     });
                   }}
-                  className="py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider border border-blush text-berry-700 hover:bg-blush-50 transition-colors"
+                  className="py-2.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider border border-blush text-berry-600 hover:bg-blush-50 transition-colors"
                 >
                   Send Another Message
                 </button>

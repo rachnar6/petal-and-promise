@@ -77,13 +77,13 @@ export default function ConsultationModal({ isOpen, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-berry-900/40 backdrop-blur-sm animate-fade-in">
-      <div className="relative w-full max-w-xl bg-ivory rounded-3xl shadow-luxe border border-blush/30 p-6 sm:p-8 overflow-hidden">
+    <div className="fixed inset-0 z-50 overflow-y-auto flex items-center justify-center p-4 bg-berry-700/40 backdrop-blur-sm animate-fade-in">
+      <div className="relative w-full max-w-xl bg-ivory-100 rounded-3xl shadow-luxe border border-blush-300/40 p-6 sm:p-8 overflow-hidden">
         
         {/* Close Button */}
         <button
           onClick={handleReset}
-          className="absolute top-5 right-5 p-2 rounded-full text-berry-400 hover:text-berry-700 hover:bg-blush-50 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full text-berry-400 hover:text-berry-600 hover:bg-blush-50 transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -92,7 +92,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
           <div>
             <div className="text-center mb-6">
               <span className="font-script text-3xl text-blush-500 block mb-1">An Intimate Conversation</span>
-              <h3 className="font-serif text-2xl font-semibold text-berry-700">
+              <h3 className="font-serif text-2xl font-semibold text-berry-600">
                 Book Your Private Floral Consultation
               </h3>
               <p className="text-xs sm:text-sm text-berry-500 mt-1 max-w-md mx-auto">
@@ -124,11 +124,11 @@ export default function ConsultationModal({ isOpen, onClose }) {
                         className={`p-3 rounded-2xl border text-left transition-all ${
                           isSelected
                             ? 'border-blush-500 bg-blush-50/90 shadow-soft'
-                            : 'border-sand-300 bg-white/70 hover:bg-sand-50'
+                            : 'border-sand-300/70 bg-white/70 hover:bg-sand-50'
                         }`}
                       >
                         <Icon className={`w-4 h-4 mb-1.5 ${isSelected ? 'text-blush-600' : 'text-berry-400'}`} />
-                        <p className="text-xs font-serif font-semibold text-berry-700 leading-snug">{type.title}</p>
+                        <p className="text-xs font-serif font-semibold text-berry-600 leading-snug">{type.title}</p>
                         <p className="text-[10px] text-berry-400 mt-0.5 leading-tight">{type.desc}</p>
                       </button>
                     );
@@ -146,7 +146,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     value={formData.clientName}
                     onChange={(e) => setFormData({ ...formData, clientName: e.target.value })}
                     placeholder="Enter your full name"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
 
@@ -158,7 +158,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     value={formData.clientEmail}
                     onChange={(e) => setFormData({ ...formData, clientEmail: e.target.value })}
                     placeholder="Enter your email address"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     value={formData.clientPhone}
                     onChange={(e) => setFormData({ ...formData, clientPhone: e.target.value })}
                     placeholder="Enter your phone number"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
 
@@ -183,7 +183,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                     required
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors"
                   />
                 </div>
 
@@ -192,7 +192,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   <select
                     value={formData.preferredTime}
                     onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors"
                   >
                     <option value="11:00">11:00 AM (Morning)</option>
                     <option value="13:30">01:30 PM (Afternoon)</option>
@@ -209,14 +209,14 @@ export default function ConsultationModal({ isOpen, onClose }) {
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
                   placeholder="Tell us about your celebration, favorite flowers, venue, or aesthetic..."
-                  className="w-full px-3.5 py-2 rounded-xl border border-sand-300 bg-white/80 text-sm text-berry-700 focus:outline-none focus:border-blush-500 transition-colors resize-none"
+                  className="w-full px-3.5 py-2 rounded-xl border border-sand-300/70 bg-ivory-50/85 text-sm text-berry-600 focus:outline-none focus:border-blush-500 transition-colors resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-600 hover:bg-berry-700 transition-all duration-300 shadow-romantic hover:shadow-luxe flex items-center justify-center gap-2 mt-4"
+                className="w-full py-3 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-500 hover:bg-berry-600 transition-all duration-300 shadow-romantic hover:shadow-luxe flex items-center justify-center gap-2 mt-4"
               >
                 {loading ? (
                   <>
@@ -239,7 +239,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
             </div>
 
             <span className="font-script text-4xl text-blush-500 block">Magnifique!</span>
-            <h3 className="font-serif text-2xl font-semibold text-berry-700">
+            <h3 className="font-serif text-2xl font-semibold text-berry-600">
               Your Consultation is Confirmed
             </h3>
 
@@ -247,7 +247,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
               We look forward to meeting with you on <strong>{formData.preferredDate}</strong> at <strong>{formData.preferredTime}</strong> for your {formData.consultationType}.
             </p>
 
-            <div className="p-4 rounded-2xl bg-blush-50/80 border border-blush/30 text-xs text-berry-600 text-left space-y-1.5 max-w-md mx-auto">
+            <div className="p-4 rounded-2xl bg-blush-50/80 border border-blush-300/40 text-xs text-berry-600 text-left space-y-1.5 max-w-md mx-auto">
               <p><strong>Appointment Details:</strong></p>
               <p>• Client: {formData.clientName} ({formData.clientEmail})</p>
               <p>• Meeting link: <a href="https://meet.google.com/pp-floral-design" target="_blank" rel="noreferrer" className="text-blush-600 underline">meet.google.com/pp-floral-design</a></p>
@@ -256,7 +256,7 @@ export default function ConsultationModal({ isOpen, onClose }) {
 
             <button
               onClick={handleReset}
-              className="py-2.5 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory shadow-soft hover:bg-berry-700 transition-colors"
+              className="py-2.5 px-8 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory shadow-soft hover:bg-berry-600 transition-colors"
             >
               Close Window
             </button>

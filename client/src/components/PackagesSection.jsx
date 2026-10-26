@@ -41,16 +41,16 @@ export default function PackagesSection() {
   };
 
   return (
-    <section id="packages" className="py-24 relative bg-ivory/60">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="packages" className="py-24 relative bg-ivory-100/60">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush/20 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100/40 text-berry-600 text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5 text-blush-500" />
             <span>Curated Celebration Collections</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Floral Design Packages
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -66,8 +66,8 @@ export default function PackagesSection() {
               onClick={() => setActiveCategory(cat)}
               className={`px-5 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-berry-600 text-ivory shadow-romantic'
-                  : 'bg-white/80 text-berry-600 hover:bg-blush-50 border border-sand-300'
+                  ? 'bg-berry-500 text-ivory shadow-romantic'
+                  : 'bg-ivory-50/85 text-berry-600 hover:bg-blush-50 border border-sand-300/70'
               }`}
             >
               {cat}
@@ -86,7 +86,7 @@ export default function PackagesSection() {
             {packages.map((pkg) => (
               <div
                 key={pkg._id || pkg.slug}
-                className="group bg-white rounded-3xl overflow-hidden border border-blush/20 shadow-soft hover:shadow-luxe transition-all duration-500 flex flex-col justify-between"
+                className="group bg-white rounded-3xl overflow-hidden border border-blush-200/35 shadow-soft hover:shadow-luxe transition-all duration-500 flex flex-col justify-between"
               >
                 <div>
                   {/* Image container */}
@@ -99,7 +99,7 @@ export default function PackagesSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-berry-900/60 to-transparent" />
                     
                     {pkg.badge && (
-                      <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-ivory/90 backdrop-blur-md text-berry-700 shadow-soft">
+                      <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-ivory-100/90 backdrop-blur-md text-berry-600 shadow-soft">
                         {pkg.badge}
                       </span>
                     )}
@@ -116,7 +116,7 @@ export default function PackagesSection() {
 
                   {/* Body Content */}
                   <div className="p-6">
-                    <h3 className="font-serif text-xl font-semibold text-berry-700 group-hover:text-blush-600 transition-colors">
+                    <h3 className="font-serif text-xl font-semibold text-berry-600 group-hover:text-blush-600 transition-colors">
                       {pkg.title}
                     </h3>
                     <p className="text-xs text-berry-500 mt-2 line-clamp-2">
@@ -144,7 +144,7 @@ export default function PackagesSection() {
                 <div className="p-6 pt-0">
                   <button
                     onClick={() => handleBookPackage(pkg)}
-                    className="w-full py-3 px-5 rounded-full text-xs font-semibold uppercase tracking-wider text-berry-700 bg-sand-100 hover:bg-berry-600 hover:text-ivory border border-sand-300 transition-all duration-300 flex items-center justify-center gap-2 group-hover:border-transparent shadow-soft"
+                    className="w-full py-3 px-5 rounded-full text-xs font-semibold uppercase tracking-wider text-berry-600 bg-sand-100 hover:bg-berry-500 hover:text-ivory border border-sand-300/70 transition-all duration-300 flex items-center justify-center gap-2 group-hover:border-transparent shadow-soft"
                   >
                     <span>Reserve Package</span>
                     <ArrowRight className="w-3.5 h-3.5 text-blush" />

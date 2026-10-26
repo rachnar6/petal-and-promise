@@ -162,20 +162,20 @@ export default function AdminPortal() {
   });
 
   return (
-    <div className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 bg-heavenly-gradient">
-      <div className="max-w-7xl mx-auto space-y-8">
+    <div className="min-h-screen py-10 bg-heavenly-gradient">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24 space-y-8">
         
         {/* Admin Header */}
-        <div className="bg-white/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="bg-ivory-50/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-2xl bg-berry-600 flex items-center justify-center text-ivory shadow-romantic">
+            <div className="w-14 h-14 rounded-2xl bg-berry-500 flex items-center justify-center text-ivory shadow-romantic">
               <Shield className="w-7 h-7 text-blush" />
             </div>
             <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-berry-100 text-[10px] font-semibold text-berry-700 uppercase tracking-wider mb-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-berry-100 text-[10px] font-semibold text-berry-600 uppercase tracking-wider mb-1">
                 <span>Director & Administration</span>
               </div>
-              <h1 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-700">
+              <h1 className="font-serif text-2xl sm:text-3xl font-semibold text-berry-600">
                 Atelier Director Command
               </h1>
               <p className="text-xs text-berry-500">
@@ -187,7 +187,7 @@ export default function AdminPortal() {
           <div className="flex items-center gap-2">
             <button
               onClick={loadAllAdminData}
-              className="p-2.5 rounded-full bg-sand-100 hover:bg-sand-200 border border-sand-300 text-berry-700 transition-colors"
+              className="p-2.5 rounded-full bg-sand-100 hover:bg-sand-200 border border-sand-300/70 text-berry-600 transition-colors"
               title="Refresh Data"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
@@ -196,7 +196,7 @@ export default function AdminPortal() {
         </div>
 
         {/* Section Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-blush/20 pb-2">
+        <div className="flex flex-wrap gap-2 border-b border-blush-200/35 pb-2">
           {[
             { id: 'overview', label: 'Overview & Analytics' },
             { id: 'bookings', label: `Bookings (${bookings.length})` },
@@ -210,8 +210,8 @@ export default function AdminPortal() {
               onClick={() => setActiveSection(tab.id)}
               className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all ${
                 activeSection === tab.id
-                  ? 'bg-berry-600 text-ivory shadow-romantic'
-                  : 'bg-white/70 text-berry-600 hover:bg-blush-50 border border-sand-300'
+                  ? 'bg-berry-500 text-ivory shadow-romantic'
+                  : 'bg-white/70 text-berry-600 hover:bg-blush-50 border border-sand-300/70'
               }`}
             >
               {tab.label}
@@ -225,7 +225,7 @@ export default function AdminPortal() {
             {/* KPI Stat Cards */}
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
               {[
-                { label: 'Total Bookings', value: overview?.totalBookings || 0, icon: Calendar, color: 'text-berry-700' },
+                { label: 'Total Bookings', value: overview?.totalBookings || 0, icon: Calendar, color: 'text-berry-600' },
                 { label: 'Confirmed Events', value: overview?.confirmedBookings || 0, icon: CheckCircle2, color: 'text-sage-600' },
                 { label: 'Pending Requests', value: overview?.pendingBookings || 0, icon: Clock, color: 'text-blush-600' },
                 { label: 'New Enquiries', value: overview?.newEnquiries || 0, icon: Mail, color: 'text-berry-500' },
@@ -233,12 +233,12 @@ export default function AdminPortal() {
               ].map((kpi, idx) => {
                 const Icon = kpi.icon;
                 return (
-                  <div key={idx} className="bg-white/90 rounded-2xl p-5 border border-blush/25 shadow-soft">
+                  <div key={idx} className="bg-ivory-50/90 rounded-2xl p-5 border border-blush/25 shadow-soft">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-[10px] uppercase font-semibold text-berry-400">{kpi.label}</span>
                       <Icon className={`w-4 h-4 ${kpi.color}`} />
                     </div>
-                    <span className="font-serif text-2xl font-bold text-berry-700">{kpi.value}</span>
+                    <span className="font-serif text-2xl font-bold text-berry-600">{kpi.value}</span>
                   </div>
                 );
               })}
@@ -248,10 +248,10 @@ export default function AdminPortal() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               
               {/* Left: Monthly Volume Chart */}
-              <div className="lg:col-span-7 bg-white/90 rounded-3xl p-6 sm:p-8 border border-blush/25 shadow-luxe space-y-4">
+              <div className="lg:col-span-7 bg-ivory-50/90 rounded-3xl p-6 sm:p-8 border border-blush/25 shadow-luxe space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h3 className="font-serif text-xl font-semibold text-berry-700">Monthly Celebration Trajectory</h3>
+                    <h3 className="font-serif text-xl font-semibold text-berry-600">Monthly Celebration Trajectory</h3>
                     <p className="text-xs text-berry-400">Total bookings booked across current calendar cycle</p>
                   </div>
                   <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-sage-100 text-sage-800">
@@ -266,7 +266,7 @@ export default function AdminPortal() {
                     return (
                       <div key={idx} className="flex flex-col items-center gap-1 group">
                         <div
-                          className="w-full bg-blush-300 group-hover:bg-berry-600 rounded-t-md transition-all duration-300 relative"
+                          className="w-full bg-blush-300 group-hover:bg-berry-500 rounded-t-md transition-all duration-300 relative"
                           style={{ height: `${heightPercent}%` }}
                         >
                           <span className="opacity-0 group-hover:opacity-100 absolute -top-6 left-1/2 -translate-x-1/2 text-[9px] font-bold bg-berry-800 text-ivory px-1 rounded">
@@ -281,8 +281,8 @@ export default function AdminPortal() {
               </div>
 
               {/* Right: Popular Event Category Breakdown */}
-              <div className="lg:col-span-5 bg-white/90 rounded-3xl p-6 sm:p-8 border border-blush/25 shadow-luxe space-y-4">
-                <h3 className="font-serif text-xl font-semibold text-berry-700">Celebration Mix Breakdown</h3>
+              <div className="lg:col-span-5 bg-ivory-50/90 rounded-3xl p-6 sm:p-8 border border-blush/25 shadow-luxe space-y-4">
+                <h3 className="font-serif text-xl font-semibold text-berry-600">Celebration Mix Breakdown</h3>
                 <p className="text-xs text-berry-400">Share of event types requested</p>
 
                 <div className="space-y-3 pt-2">
@@ -293,13 +293,13 @@ export default function AdminPortal() {
                     { name: 'Anniversaries', value: 5 }
                   ]).map((cat, i) => (
                     <div key={i} className="text-xs">
-                      <div className="flex justify-between font-medium text-berry-700 mb-1">
+                      <div className="flex justify-between font-medium text-berry-600 mb-1">
                         <span>{cat.name}</span>
                         <span>{cat.value} bookings</span>
                       </div>
                       <div className="w-full h-2 rounded-full bg-sand-200 overflow-hidden">
                         <div
-                          className="h-full bg-berry-600 rounded-full"
+                          className="h-full bg-berry-500 rounded-full"
                           style={{ width: `${Math.min(100, cat.value * 20)}%` }}
                         />
                       </div>
@@ -320,14 +320,14 @@ export default function AdminPortal() {
         {activeSection === 'bookings' && (
           <div className="space-y-6 animate-fade-in">
             {/* Filter & Search Bar */}
-            <div className="bg-white/90 rounded-2xl p-4 border border-sand-300 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-ivory-50/90 rounded-2xl p-4 border border-sand-300/70 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="relative w-full sm:w-80">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search client, email or PP- reference..."
-                  className="w-full pl-9 pr-4 py-2 rounded-xl border border-sand-300 text-xs text-berry-700 focus:outline-none focus:border-blush"
+                  className="w-full pl-9 pr-4 py-2 rounded-xl border border-sand-300/70 text-xs text-berry-600 focus:outline-none focus:border-blush"
                 />
                 <Search className="w-4 h-4 text-berry-400 absolute left-3 top-2.5" />
               </div>
@@ -339,7 +339,7 @@ export default function AdminPortal() {
                     onClick={() => setStatusFilter(st)}
                     className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap transition-colors ${
                       statusFilter === st
-                        ? 'bg-berry-600 text-ivory'
+                        ? 'bg-berry-500 text-ivory'
                         : 'bg-sand-100 text-berry-600 hover:bg-sand-200'
                     }`}
                   >
@@ -350,7 +350,7 @@ export default function AdminPortal() {
             </div>
 
             {/* Bookings Table */}
-            <div className="bg-white/90 rounded-3xl border border-blush/25 shadow-luxe overflow-hidden">
+            <div className="bg-ivory-50/90 rounded-3xl border border-blush/25 shadow-luxe overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-sand-100 text-berry-600 font-serif uppercase tracking-wider text-[11px] border-b border-sand-200">
@@ -370,22 +370,22 @@ export default function AdminPortal() {
                           {b.bookingReference}
                         </td>
                         <td className="py-3.5 px-4">
-                          <p className="font-semibold text-berry-700">{b.clientName}</p>
+                          <p className="font-semibold text-berry-600">{b.clientName}</p>
                           <p className="text-[11px] text-berry-400">{b.clientEmail}</p>
                         </td>
                         <td className="py-3.5 px-4">
-                          <p className="font-medium text-berry-700">{b.eventType}</p>
+                          <p className="font-medium text-berry-600">{b.eventType}</p>
                           <p className="text-[11px] text-berry-500">{b.eventDate} ({b.guestCount} guests)</p>
                         </td>
-                        <td className="py-3.5 px-4 font-bold text-berry-700">
+                        <td className="py-3.5 px-4 font-bold text-berry-600">
                           ${(b.budget?.total || 0).toLocaleString()}
                         </td>
                         <td className="py-3.5 px-4">
                           <span className={`inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase ${
                             b.status === 'Confirmed' ? 'bg-sage-100 text-sage-800' :
-                            b.status === 'Pending' ? 'bg-sand-200 text-berry-700' :
-                            b.status === 'In Progress' ? 'bg-blush-100 text-berry-700' :
-                            b.status === 'Completed' ? 'bg-berry-100 text-berry-800' :
+                            b.status === 'Pending' ? 'bg-sand-200 text-berry-600' :
+                            b.status === 'In Progress' ? 'bg-blush-100 text-berry-600' :
+                            b.status === 'Completed' ? 'bg-berry-100 text-berry-600' :
                             'bg-gray-100 text-gray-500'
                           }`}>
                             {b.status}
@@ -397,7 +397,7 @@ export default function AdminPortal() {
                               setSelectedBooking(b);
                               setNewStatus(b.status);
                             }}
-                            className="py-1 px-3 rounded-full text-[11px] font-semibold uppercase bg-berry-600 text-ivory hover:bg-berry-700 shadow-soft"
+                            className="py-1 px-3 rounded-full text-[11px] font-semibold uppercase bg-berry-500 text-ivory hover:bg-berry-600 shadow-soft"
                           >
                             Manage Status
                           </button>
@@ -416,22 +416,22 @@ export default function AdminPortal() {
           <div className="space-y-4 animate-fade-in">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {enquiries.map((e) => (
-                <div key={e._id} className="bg-white/90 rounded-3xl p-6 border border-blush/25 shadow-soft space-y-3">
+                <div key={e._id} className="bg-ivory-50/90 rounded-3xl p-6 border border-blush/25 shadow-soft space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-xs text-berry-700">{e.name}</span>
-                    <span className="text-[10px] font-semibold uppercase px-2.5 py-0.5 rounded-full bg-blush-100 text-berry-700">
+                    <span className="font-semibold text-xs text-berry-600">{e.name}</span>
+                    <span className="text-[10px] font-semibold uppercase px-2.5 py-0.5 rounded-full bg-blush-100 text-berry-600">
                       {e.status}
                     </span>
                   </div>
                   <p className="text-xs text-berry-500">{e.email} • {e.phone || 'No phone'}</p>
-                  <p className="text-xs text-berry-700 font-medium">Type: {e.eventType} • Target: {e.estimatedDate}</p>
+                  <p className="text-xs text-berry-600 font-medium">Type: {e.eventType} • Target: {e.estimatedDate}</p>
                   <p className="text-xs italic bg-sand-50 p-3 rounded-xl border border-sand-200 text-berry-600">
                     "{e.message}"
                   </p>
                   <div className="pt-2 flex justify-end gap-2 text-xs">
                     <a
                       href={`mailto:${e.email}?subject=Petal %26 Promise Celebration Follow-Up`}
-                      className="py-1.5 px-3.5 rounded-full bg-berry-600 text-ivory font-semibold"
+                      className="py-1.5 px-3.5 rounded-full bg-berry-500 text-ivory font-semibold"
                     >
                       Reply via Email
                     </a>
@@ -446,15 +446,15 @@ export default function AdminPortal() {
         {activeSection === 'consultations' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
             {consultations.map((c) => (
-              <div key={c._id} className="bg-white rounded-3xl p-6 border border-sand-300 shadow-soft space-y-3">
+              <div key={c._id} className="bg-white rounded-3xl p-6 border border-sand-300/70 shadow-soft space-y-3">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-serif font-semibold text-base text-berry-700">{c.clientName}</h4>
+                  <h4 className="font-serif font-semibold text-base text-berry-600">{c.clientName}</h4>
                   <span className="text-[10px] font-semibold uppercase px-2.5 py-0.5 rounded-full bg-sage-100 text-sage-800">
                     {c.status}
                   </span>
                 </div>
                 <p className="text-xs text-berry-500">{c.clientEmail} • {c.clientPhone}</p>
-                <p className="text-xs font-medium text-berry-700">
+                <p className="text-xs font-medium text-berry-600">
                   {c.consultationType} on <strong>{c.preferredDate} at {c.preferredTime}</strong>
                 </p>
                 {c.notes && <p className="text-xs italic text-berry-500 bg-sand-50 p-2 rounded-xl">"{c.notes}"</p>}
@@ -478,10 +478,10 @@ export default function AdminPortal() {
         {activeSection === 'packages' && (
           <div className="space-y-6 animate-fade-in">
             <div className="flex justify-between items-center">
-              <h3 className="font-serif text-xl font-semibold text-berry-700">Live Package Collections</h3>
+              <h3 className="font-serif text-xl font-semibold text-berry-600">Live Package Collections</h3>
               <button
                 onClick={() => setShowNewPkgModal(true)}
-                className="py-2 px-5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory hover:bg-berry-700 flex items-center gap-1.5 shadow-soft"
+                className="py-2 px-5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory hover:bg-berry-600 flex items-center gap-1.5 shadow-soft"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Create New Package</span>
@@ -490,13 +490,13 @@ export default function AdminPortal() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {packages.map((pkg) => (
-                <div key={pkg._id} className="bg-white rounded-3xl p-6 border border-sand-300 shadow-soft space-y-3">
+                <div key={pkg._id} className="bg-white rounded-3xl p-6 border border-sand-300/70 shadow-soft space-y-3">
                   <div className="flex justify-between items-start">
                     <div>
                       <span className="text-[10px] font-semibold uppercase text-blush-600">{pkg.category}</span>
-                      <h4 className="font-serif text-lg font-semibold text-berry-700">{pkg.title}</h4>
+                      <h4 className="font-serif text-lg font-semibold text-berry-600">{pkg.title}</h4>
                     </div>
-                    <span className="font-serif font-bold text-sm text-berry-700">
+                    <span className="font-serif font-bold text-sm text-berry-600">
                       ${pkg.startingPrice?.toLocaleString()}
                     </span>
                   </div>
@@ -512,12 +512,12 @@ export default function AdminPortal() {
           <div className="space-y-8 animate-fade-in">
             
             {/* Outbox Overview & Test Tool */}
-            <div className="bg-white/90 rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe space-y-6">
+            <div className="bg-ivory-50/90 rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe space-y-6">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-wider text-blush-600">
                   Webhook Automation Outbox
                 </span>
-                <h3 className="font-serif text-2xl font-semibold text-berry-700 mt-1">
+                <h3 className="font-serif text-2xl font-semibold text-berry-600 mt-1">
                   Pabbly Connect Integration Engine
                 </h3>
                 <p className="text-xs text-berry-500 mt-1 max-w-2xl">
@@ -526,8 +526,8 @@ export default function AdminPortal() {
               </div>
 
               {/* Interactive Webhook Test Box */}
-              <div className="p-5 rounded-2xl bg-sand-100/80 border border-sand-300 space-y-4">
-                <p className="text-xs font-semibold uppercase tracking-wider text-berry-700 flex items-center gap-2">
+              <div className="p-5 rounded-2xl bg-sand-100/80 border border-sand-300/70 space-y-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-berry-600 flex items-center gap-2">
                   <Send className="w-3.5 h-3.5 text-blush-500" />
                   <span>Test Live Webhook Dispatch</span>
                 </p>
@@ -538,7 +538,7 @@ export default function AdminPortal() {
                     <select
                       value={testEventType}
                       onChange={(e) => setTestEventType(e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-sand-300 bg-white text-xs text-berry-700"
+                      className="w-full px-3 py-2 rounded-xl border border-sand-300/70 bg-white text-xs text-berry-600"
                     >
                       <option value="booking.created">Workflow A: New Booking (booking.created)</option>
                       <option value="consultation.scheduled">Workflow B: Consultation (consultation.scheduled)</option>
@@ -557,12 +557,12 @@ export default function AdminPortal() {
                         value={customWebhookUrl}
                         onChange={(e) => setCustomWebhookUrl(e.target.value)}
                         placeholder="https://connect.pabbly.com/workflow/sendwebhookdata/..."
-                        className="flex-1 px-3 py-2 rounded-xl border border-sand-300 bg-white text-xs text-berry-700 focus:outline-none focus:border-blush"
+                        className="flex-1 px-3 py-2 rounded-xl border border-sand-300/70 bg-white text-xs text-berry-600 focus:outline-none focus:border-blush"
                       />
                       <button
                         onClick={handleTestWebhookDispatch}
                         disabled={testingWebhook}
-                        className="px-5 py-2 rounded-xl bg-berry-600 text-ivory text-xs font-semibold uppercase tracking-wider hover:bg-berry-700 shadow-soft whitespace-nowrap flex items-center gap-1.5"
+                        className="px-5 py-2 rounded-xl bg-berry-500 text-ivory text-xs font-semibold uppercase tracking-wider hover:bg-berry-600 shadow-soft whitespace-nowrap flex items-center gap-1.5"
                       >
                         {testingWebhook ? (
                           <Sparkles className="w-3.5 h-3.5 animate-spin" />
@@ -589,9 +589,9 @@ export default function AdminPortal() {
             </div>
 
             {/* Outbox Events Log Table */}
-            <div className="bg-white/90 rounded-3xl border border-blush/25 shadow-luxe overflow-hidden">
+            <div className="bg-ivory-50/90 rounded-3xl border border-blush/25 shadow-luxe overflow-hidden">
               <div className="p-5 border-b border-sand-200 flex justify-between items-center">
-                <h4 className="font-serif font-semibold text-base text-berry-700">Outbox Audit History</h4>
+                <h4 className="font-serif font-semibold text-base text-berry-600">Outbox Audit History</h4>
                 <span className="text-xs text-berry-400">{outboxEvents.length} Recent Events Logged</span>
               </div>
 
@@ -611,16 +611,16 @@ export default function AdminPortal() {
                     {outboxEvents.map((ev) => (
                       <tr key={ev._id || ev.eventId} className="hover:bg-sand-50/70">
                         <td className="py-3 px-4 font-mono font-semibold text-berry-600">{ev.eventId}</td>
-                        <td className="py-3 px-4 font-semibold text-berry-700">{ev.eventType}</td>
+                        <td className="py-3 px-4 font-semibold text-berry-600">{ev.eventType}</td>
                         <td className="py-3 px-4 font-mono text-[11px] text-berry-500 max-w-[200px] truncate">
                           {ev.webhookUrl || 'Default'}
                         </td>
                         <td className="py-3 px-4">
                           <span className={`px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase ${
                             ev.status === 'dispatched' ? 'bg-sage-100 text-sage-800' :
-                            ev.status === 'simulated_success' ? 'bg-blush-100 text-berry-700' :
+                            ev.status === 'simulated_success' ? 'bg-blush-100 text-berry-600' :
                             ev.status === 'failed' ? 'bg-red-100 text-red-700' :
-                            'bg-sand-200 text-berry-700'
+                            'bg-sand-200 text-berry-600'
                           }`}>
                             {ev.status}
                           </span>
@@ -642,14 +642,14 @@ export default function AdminPortal() {
       {/* Status Update Modal */}
       {selectedBooking && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-950/60 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-700/60 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedBooking(null)}
         >
           <div
-            className="relative max-w-md w-full bg-ivory rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe"
+            className="relative max-w-md w-full bg-ivory-100 rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="font-serif text-xl font-semibold text-berry-700">Update Booking Status</h3>
+            <h3 className="font-serif text-xl font-semibold text-berry-600">Update Booking Status</h3>
             <p className="text-xs text-berry-500 mt-1">
               Reservation #{selectedBooking.bookingReference} for {selectedBooking.clientName}
             </p>
@@ -662,7 +662,7 @@ export default function AdminPortal() {
                 <select
                   value={newStatus}
                   onChange={(e) => setNewStatus(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 text-xs text-berry-700 bg-white"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 text-xs text-berry-600 bg-white"
                 >
                   <option value="Pending">Pending Review</option>
                   <option value="Confirmed">Confirmed (Deposit Sourced)</option>
@@ -681,11 +681,11 @@ export default function AdminPortal() {
                   value={adminNote}
                   onChange={(e) => setAdminNote(e.target.value)}
                   placeholder="e.g. Sourced Dutch peonies from wholesaler, confirmed setup at 10 AM."
-                  className="w-full px-3 py-2 rounded-xl border border-sand-300 text-xs text-berry-700 resize-none bg-white"
+                  className="w-full px-3 py-2 rounded-xl border border-sand-300/70 text-xs text-berry-600 resize-none bg-white"
                 />
               </div>
 
-              <div className="p-3 rounded-xl bg-blush-50 border border-blush/30 text-[11px] text-sage-800">
+              <div className="p-3 rounded-xl bg-blush-50 border border-blush-300/40 text-[11px] text-sage-800">
                 🌿 Updating this status will trigger Pabbly Workflow 3 to email the client with this updated status.
               </div>
             </div>
@@ -700,7 +700,7 @@ export default function AdminPortal() {
               <button
                 onClick={() => handleUpdateStatus(selectedBooking._id, newStatus)}
                 disabled={updatingStatus}
-                className="py-2 px-5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-600 text-ivory hover:bg-berry-700 shadow-soft"
+                className="py-2 px-5 rounded-full text-xs font-semibold uppercase tracking-wider bg-berry-500 text-ivory hover:bg-berry-600 shadow-soft"
               >
                 {updatingStatus ? 'Updating & Triggering Webhook...' : 'Save & Emit'}
               </button>
@@ -712,14 +712,14 @@ export default function AdminPortal() {
       {/* New Package Modal */}
       {showNewPkgModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-950/60 backdrop-blur-sm animate-fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-berry-700/60 backdrop-blur-sm animate-fade-in"
           onClick={() => setShowNewPkgModal(false)}
         >
           <div
-            className="relative max-w-lg w-full bg-ivory rounded-3xl p-6 sm:p-8 border border-blush/30 shadow-luxe"
+            className="relative max-w-lg w-full bg-ivory-100 rounded-3xl p-6 sm:p-8 border border-blush-300/40 shadow-luxe"
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="font-serif text-2xl font-semibold text-berry-700">Create Event Package</h3>
+            <h3 className="font-serif text-2xl font-semibold text-berry-600">Create Event Package</h3>
             <p className="text-xs text-berry-500 mt-1">Add a new floral collection to the public catalog.</p>
 
             <form onSubmit={handleCreatePackage} className="space-y-4 mt-4 text-xs">
@@ -731,7 +731,7 @@ export default function AdminPortal() {
                   value={pkgFormData.title}
                   onChange={(e) => setPkgFormData({ ...pkgFormData, title: e.target.value })}
                   placeholder="e.g. Tuscan Villa Romance"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white text-berry-700"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-white text-berry-600"
                 />
               </div>
 
@@ -741,7 +741,7 @@ export default function AdminPortal() {
                   <select
                     value={pkgFormData.category}
                     onChange={(e) => setPkgFormData({ ...pkgFormData, category: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white text-berry-700"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-white text-berry-600"
                   >
                     <option value="Wedding">Wedding</option>
                     <option value="Birthday">Birthday</option>
@@ -757,7 +757,7 @@ export default function AdminPortal() {
                     type="number"
                     value={pkgFormData.startingPrice}
                     onChange={(e) => setPkgFormData({ ...pkgFormData, startingPrice: Number(e.target.value) })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white text-berry-700"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-white text-berry-600"
                   />
                 </div>
               </div>
@@ -769,7 +769,7 @@ export default function AdminPortal() {
                   value={pkgFormData.tagline}
                   onChange={(e) => setPkgFormData({ ...pkgFormData, tagline: e.target.value })}
                   placeholder="e.g. Cascading olive branches, warm sand roses, and terracotta urns"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300 bg-white text-berry-700"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-sand-300/70 bg-white text-berry-600"
                 />
               </div>
 
@@ -779,7 +779,7 @@ export default function AdminPortal() {
                   rows="2"
                   value={pkgFormData.inclusions}
                   onChange={(e) => setPkgFormData({ ...pkgFormData, inclusions: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-sand-300 bg-white text-berry-700 resize-none"
+                  className="w-full px-3 py-2 rounded-xl border border-sand-300/70 bg-white text-berry-600 resize-none"
                 />
               </div>
 
@@ -793,7 +793,7 @@ export default function AdminPortal() {
                 </button>
                 <button
                   type="submit"
-                  className="py-2 px-6 rounded-full uppercase tracking-wider font-semibold bg-berry-600 text-ivory hover:bg-berry-700 shadow-soft"
+                  className="py-2 px-6 rounded-full uppercase tracking-wider font-semibold bg-berry-500 text-ivory hover:bg-berry-600 shadow-soft"
                 >
                   Create Package
                 </button>

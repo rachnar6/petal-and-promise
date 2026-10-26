@@ -60,8 +60,8 @@ export default function BudgetPlanner() {
   };
 
   return (
-    <section id="planner" className="py-24 relative bg-ivory">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="planner" className="py-24 relative bg-ivory-100">
+      <div className="w-full mx-auto px-6 sm:px-10 lg:px-16 xl:px-24">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -69,7 +69,7 @@ export default function BudgetPlanner() {
             <Calculator className="w-3.5 h-3.5 text-sage-600" />
             <span>Interactive Floral Investment Calculator</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-700 leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-semibold text-berry-600 leading-tight">
             Celebration Budget Planner
           </h2>
           <p className="font-cormorant text-xl text-berry-500 mt-3 italic">
@@ -78,7 +78,7 @@ export default function BudgetPlanner() {
         </div>
 
         {/* Planner Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-white/80 rounded-3xl p-6 sm:p-10 border border-blush/30 shadow-luxe">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-ivory-50/85 rounded-3xl p-6 sm:p-10 border border-blush-300/40 shadow-luxe">
           
           {/* Controls Column */}
           <div className="lg:col-span-6 space-y-7">
@@ -89,7 +89,7 @@ export default function BudgetPlanner() {
                 <label className="text-xs font-semibold uppercase tracking-wider text-berry-600">
                   Target Celebration Floral Budget
                 </label>
-                <span className="font-serif text-2xl font-bold text-berry-700">
+                <span className="font-serif text-2xl font-bold text-berry-600">
                   ${totalBudget.toLocaleString()}
                 </span>
               </div>
@@ -116,7 +116,7 @@ export default function BudgetPlanner() {
                   <Users className="w-3.5 h-3.5 text-sage-600" />
                   <span>Estimated Guest Count</span>
                 </label>
-                <span className="font-serif text-xl font-bold text-berry-700">
+                <span className="font-serif text-xl font-bold text-berry-600">
                   {guestCount} Guests
                 </span>
               </div>
@@ -161,12 +161,12 @@ export default function BudgetPlanner() {
                       }`}
                     >
                       <div className={`mt-0.5 w-5 h-5 rounded-md flex items-center justify-center border transition-colors ${
-                        isChecked ? 'bg-berry-600 border-berry-600 text-ivory' : 'border-sand-400 bg-white'
+                        isChecked ? 'bg-berry-500 border-berry-600 text-ivory' : 'border-sand-400 bg-white'
                       }`}>
                         {isChecked && <Check className="w-3.5 h-3.5" />}
                       </div>
                       <div>
-                        <p className="text-xs font-serif font-semibold text-berry-700">{item.name}</p>
+                        <p className="text-xs font-serif font-semibold text-berry-600">{item.name}</p>
                         <p className="text-[11px] text-berry-400 mt-0.5">{item.desc}</p>
                       </div>
                     </div>
@@ -177,17 +177,17 @@ export default function BudgetPlanner() {
           </div>
 
           {/* Allocation Breakdown Column */}
-          <div className="lg:col-span-6 bg-sand-100/70 rounded-2xl p-6 sm:p-8 border border-sand-300 space-y-6">
+          <div className="lg:col-span-6 bg-sand-100/70 rounded-2xl p-6 sm:p-8 border border-sand-300/70 space-y-6">
             <div>
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold uppercase tracking-widest text-blush-600">
                   Recommended Configuration
                 </span>
-                <span className="px-3 py-1 rounded-full bg-berry-600 text-ivory text-[10px] font-semibold uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full bg-berry-500 text-ivory text-[10px] font-semibold uppercase tracking-wider">
                   {tier}
                 </span>
               </div>
-              <h3 className="font-serif text-2xl font-semibold text-berry-700 mt-1">
+              <h3 className="font-serif text-2xl font-semibold text-berry-600 mt-1">
                 Visual Investment Allocation
               </h3>
               <p className="text-xs text-berry-500 mt-1">{tierBadge}</p>
@@ -200,12 +200,12 @@ export default function BudgetPlanner() {
                 { label: 'Reception Centerpieces & Tables', amount: allocations.centerpieces, color: 'bg-sage' },
                 { label: 'Bridal & Entourage Florals', amount: allocations.personals, color: 'bg-berry-400' },
                 { label: 'Candlelight & Ambient Illumination', amount: allocations.lighting, color: 'bg-sand-400' },
-                { label: 'Suspended Ceiling Installation', amount: allocations.suspended, color: 'bg-berry-600' },
+                { label: 'Suspended Ceiling Installation', amount: allocations.suspended, color: 'bg-berry-500' },
               ].filter(item => item.amount > 0).map((item) => {
                 const percent = totalBudget > 0 ? Math.round((item.amount / totalBudget) * 100) : 0;
                 return (
                   <div key={item.label} className="text-xs">
-                    <div className="flex justify-between font-medium text-berry-700 mb-1">
+                    <div className="flex justify-between font-medium text-berry-600 mb-1">
                       <span>{item.label}</span>
                       <span>${item.amount.toLocaleString()} ({percent}%)</span>
                     </div>
@@ -220,16 +220,16 @@ export default function BudgetPlanner() {
               })}
             </div>
 
-            <div className="pt-3 border-t border-sand-300 flex items-center justify-between">
+            <div className="pt-3 border-t border-sand-300/70 flex items-center justify-between">
               <div>
                 <p className="text-[11px] text-berry-400 uppercase tracking-wider">Estimated Per-Guest Average</p>
-                <p className="font-serif text-xl font-bold text-berry-700">
+                <p className="font-serif text-xl font-bold text-berry-600">
                   ${Math.round(totalBudget / Math.max(guestCount, 1))} <span className="text-xs font-normal text-berry-500">/ guest</span>
                 </p>
               </div>
               <div className="text-right">
                 <p className="text-[11px] text-berry-400 uppercase tracking-wider">Total Package Estimate</p>
-                <p className="font-serif text-2xl font-bold text-berry-700">
+                <p className="font-serif text-2xl font-bold text-berry-600">
                   ${totalBudget.toLocaleString()}
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function BudgetPlanner() {
 
             <button
               onClick={handleProceed}
-              className="w-full py-3.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-600 hover:bg-berry-700 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2 group"
+              className="w-full py-3.5 px-6 rounded-full text-xs font-semibold uppercase tracking-wider text-ivory bg-berry-500 hover:bg-berry-600 shadow-romantic hover:shadow-luxe transition-all duration-300 flex items-center justify-center gap-2 group"
             >
               <Sparkles className="w-4 h-4 text-blush" />
               <span>Apply This Budget to Celebration Plan</span>
